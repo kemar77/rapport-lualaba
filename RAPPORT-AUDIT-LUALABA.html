@@ -548,13 +548,12 @@
 
 </div>
 
-<footer>
-  <div class="brand">REM <span>CORP</span> SARL</div>
-  <p>4972, av. de la Vallée, C/ Gombe — Ville de Kinshasa, RDC · Tél : +243 851 597 359 · michel@remcorpafrica.com</p>
-  <p style="margin-top: 1rem;">Audit 360° — Kolwezi & Lualaba · 02/10/2026 · Données vérifiées par revue contradictoire</p>
-</footer>
-
 <script>
+// Vérification du mot de passe
+if (!sessionStorage.getItem('lualaba_auth')) {
+  window.location.href = 'login.html';
+}
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add('visible');

@@ -92,7 +92,7 @@
       e.preventDefault();
       const password = document.getElementById('password').value;
       if (password === '9999') {
-        window.location.href = 'RAPPORT-AUDIT-LUALABA.html';
+        sessionStorage.setItem('lualaba_auth','1');window.location.href = 'RAPPORT-AUDIT-LUALABA.html';
       } else {
         document.getElementById('error').style.display = 'block';
       }
