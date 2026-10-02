@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accès — Rapport Lualaba</title>
+<style>
+  :root {
+    --bg:      #0b0e14;
+    --surface: #18202e;
+    --ink:     #e9edf5;
+    --muted:   #93a0b6;
+    --accent:  #1415f9;
+    --accent2: #15f701;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-box {
+    background: var(--surface);
+    border: 1px solid var(--bg);
+    border-radius: 16px;
+    padding: 3rem;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  .login-box h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+  .login-box h1 span { color: var(--accent); }
+  .login-box p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+  .login-box input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--bg);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+  }
+  .login-box input:focus { border-color: var(--accent); }
+  .login-box button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .login-box button:hover { background: #2020ff; }
+  .login-box .error {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    display: none;
+  }
+</style>
+</head>
+<body>
+  <div class="login-box">
+    <h1>REM <span>CORP</span></h1>
+    <p>Rapport 360° — Kolwezi & Lualaba</p>
+    <form id="loginForm">
+      <input type="password" id="password" placeholder="Mot de passe" required>
+      <button type="submit">Accéder au rapport</button>
+    </form>
+    <p class="error" id="error">Mot de passe incorrect</p>
+  </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const password = document.getElementById('password').value;
+      if (password === '9999') {
+        window.location.href = 'index.html';
+      } else {
+        document.getElementById('error').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
