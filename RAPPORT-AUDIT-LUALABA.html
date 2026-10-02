@@ -1,438 +1,173 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audit Industriel — Corridor de Lobito, Kolwezi & Financements USA · REM CORP · 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit 360° Business — Kolwezi & Lualaba · REM CORP · 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@6.1.0/dist/echarts.min.js"
+        integrity="sha384-C2iskrW/uPW46KzOjrvJIQo4YkV8lkD+QS0CrDN18IIPIpT/g2USu8bTP3nvmIAD"
+        crossorigin="anonymous"></script>
 <style>
-:root {
-  --bg: #0a0a0a;
-  --bg2: #111111;
-  --bg3: #1a1a1a;
-  --fg: #f5f5f0;
-  --fg-dim: #a0a0a0;
-  --fg-mute: #666666;
-  --accent: #B85042;
-  --accent2: #2C5F2D;
-  --accent3: #E7E8D1;
-  --accent4: #D47A00;
-  --line: #2a2a2a;
-  --line2: #333333;
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-}
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font-body);
-  background: var(--bg);
-  color: var(--fg);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-::selection { background: var(--accent); color: var(--fg); }
+  :root {
+    --bg:      #0b0e14;
+    --surface: #18202e;
+    --ink:     #e9edf5;
+    --muted:   #93a0b6;
+    --accent:  #1415f9;
+    --accent2: #15f701;
+    --accent3: #e9e7f2;
+    --accent4: #D47A00;
+    --sev-info:#58b6ff;
+    --sev-ok:  #3ecf8e;
+    --sev-warn:#f5b352;
+    --sev-crit:#ff6b6b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--accent); color: var(--ink); }
 
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: rgba(10,10,10,0.85);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--line);
-  padding: 0 2rem;
-  height: 60px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-nav .brand {
-  font-family: var(--font-display);
-  font-weight: 800; font-size: 1.1rem;
-  color: var(--fg);
-  letter-spacing: -0.02em;
-}
-nav .brand span { color: var(--accent); }
-nav .meta {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--fg-mute);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-nav .meta b { color: var(--accent3); }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(11,14,20,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--surface);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  nav .brand { font-weight: 800; font-size: 1.1rem; color: var(--ink); letter-spacing: -0.02em; }
+  nav .brand span { color: var(--accent); }
+  nav .meta { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  nav .meta b { color: var(--accent3); }
 
-/* LAYOUT */
-.page { padding-top: 60px; }
-section {
-  min-height: 100vh;
-  padding: 6rem 4rem;
-  display: flex; flex-direction: column; justify-content: center;
-  position: relative;
-}
-section.alt { background: var(--bg2); }
-section.dark { background: var(--bg); }
+  .page { padding-top: 60px; }
+  section { min-height: 100vh; padding: 6rem 4rem; display: flex; flex-direction: column; justify-content: center; position: relative; }
+  section.alt { background: var(--surface); }
 
-/* GRID */
-.container { max-width: 1400px; margin: 0 auto; width: 100%; }
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .container { max-width: 1400px; margin: 0 auto; width: 100%; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
 
-/* TYPO */
-h1 {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 8vw, 7rem);
-  font-weight: 900; line-height: 1.0;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
-}
-h1 .accent { color: var(--accent); }
-h2 {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 800; line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-}
-h2 .accent { color: var(--accent); }
-h3 {
-  font-family: var(--font-body);
-  font-size: 1.25rem; font-weight: 700;
-  margin-bottom: 0.75rem;
-  color: var(--accent3);
-}
-p { font-size: 1rem; line-height: 1.7; color: var(--fg-dim); margin-bottom: 1rem; }
-p.lead { font-size: 1.25rem; color: var(--fg); font-weight: 300; }
-p.small { font-size: 0.85rem; color: var(--fg-mute); }
+  h1 { font-size: clamp(3rem, 8vw, 7rem); font-weight: 900; line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
+  h1 .accent { color: var(--accent); }
+  h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1rem; }
+  h2 .accent { color: var(--accent); }
+  h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--accent3); }
+  p { font-size: 1rem; line-height: 1.7; color: var(--muted); margin-bottom: 1rem; }
+  p.lead { font-size: 1.25rem; color: var(--ink); font-weight: 300; }
+  p.small { font-size: 0.85rem; color: var(--muted); }
 
-/* EYEBROW */
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--accent);
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-}
+  .eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 1.5rem; font-weight: 600; }
 
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex; align-items: center;
-  background: linear-gradient(160deg, var(--bg) 0%, #1a0a0a 50%, var(--bg) 100%);
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(184,80,66,0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 50%, rgba(44,95,45,0.1) 0%, transparent 50%);
-  pointer-events: none;
-}
-.hero-content { position: relative; z-index: 2; max-width: 1000px; }
-.hero h1 { font-size: clamp(3.5rem, 10vw, 8rem); }
-.hero .subtitle {
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  color: var(--fg-dim);
-  font-weight: 300;
-  max-width: 700px;
-  margin-bottom: 3rem;
-}
-.hero .meta-row {
-  display: flex; gap: 3rem; flex-wrap: wrap;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--fg-mute);
-}
-.hero .meta-row b { color: var(--accent3); display: block; font-size: 1.1rem; }
+  .hero { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(160deg, var(--bg) 0%, #0a0a2e 50%, var(--bg) 100%); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 50%, rgba(20,21,249,0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 50%, rgba(21,247,1,0.05) 0%, transparent 50%); pointer-events: none; }
+  .hero-content { position: relative; z-index: 2; max-width: 1000px; }
+  .hero h1 { font-size: clamp(3.5rem, 10vw, 8rem); }
+  .hero .subtitle { font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--muted); font-weight: 300; max-width: 700px; margin-bottom: 3rem; }
+  .hero .meta-row { display: flex; gap: 3rem; flex-wrap: wrap; font-size: 0.8rem; color: var(--muted); }
+  .hero .meta-row b { color: var(--accent3); display: block; font-size: 1.1rem; }
 
-/* STAT CARDS */
-.stat-card {
-  background: var(--bg3);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-.stat-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-}
-.stat-card .value {
-  font-family: var(--font-display);
-  font-size: 3rem; font-weight: 900;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-.stat-card .label {
-  font-size: 0.85rem;
-  color: var(--fg-dim);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-.stat-card .source {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  color: var(--fg-mute);
-  margin-top: 1rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--line);
-}
+  .stat-card { background: var(--surface); border: 1px solid var(--bg); border-radius: 12px; padding: 2rem; position: relative; overflow: hidden; transition: transform 0.3s ease, border-color 0.3s ease; }
+  .stat-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .stat-card .value { font-size: 3rem; font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: 0.5rem; }
+  .stat-card .value .usd { font-size: 2.5rem; }
+  .stat-card .value .cdf { font-size: 0.9rem; color: var(--muted); font-weight: 400; display: block; margin-top: 0.25rem; }
+  .stat-card .label { font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  .stat-card .source { font-size: 0.65rem; color: var(--muted); margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--bg); }
 
-/* TABLE */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
-}
-th {
-  text-align: left;
-  padding: 1rem;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--fg-mute);
-  border-bottom: 2px solid var(--accent);
-}
-td {
-  padding: 1rem;
-  border-bottom: 1px solid var(--line);
-  color: var(--fg-dim);
-}
-td:first-child { color: var(--fg); font-weight: 600; }
-td.num { font-family: var(--font-mono); text-align: right; }
-tr:hover td { background: rgba(184,80,66,0.05); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  th { text-align: left; padding: 1rem; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); border-bottom: 2px solid var(--accent); }
+  td { padding: 1rem; border-bottom: 1px solid var(--bg); color: var(--muted); }
+  td:first-child { color: var(--ink); font-weight: 600; }
+  td.num { text-align: right; }
+  td .usd { color: var(--ink); font-weight: 600; }
+  td .cdf { font-size: 0.8rem; color: var(--muted); }
+  tr:hover td { background: rgba(20,21,249,0.05); }
 
-/* BADGE */
-.badge {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  font-weight: 600;
-}
-.badge-green { background: rgba(44,95,45,0.3); color: #4a9e5a; border: 1px solid rgba(44,95,45,0.5); }
-.badge-red { background: rgba(184,80,66,0.2); color: #d4706a; border: 1px solid rgba(184,80,66,0.4); }
-.badge-yellow { background: rgba(212,122,0,0.2); color: #d4a040; border: 1px solid rgba(212,122,0,0.4); }
-.badge-gray { background: var(--bg3); color: var(--fg-mute); border: 1px solid var(--line); }
+  .badge { display: inline-block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.25rem 0.75rem; border-radius: 4px; font-weight: 600; }
+  .badge-green { background: rgba(21,247,1,0.2); color: var(--accent2); border: 1px solid rgba(21,247,1,0.4); }
+  .badge-red { background: rgba(255,107,107,0.2); color: var(--sev-crit); border: 1px solid rgba(255,107,107,0.4); }
+  .badge-yellow { background: rgba(212,122,0,0.2); color: var(--accent4); border: 1px solid rgba(212,122,0,0.4); }
+  .badge-gray { background: var(--surface); color: var(--muted); border: 1px solid var(--bg); }
 
-/* CALLOUT */
-.callout {
-  background: var(--bg3);
-  border-left: 4px solid var(--accent);
-  padding: 1.5rem 2rem;
-  border-radius: 0 8px 8px 0;
-  margin: 2rem 0;
-}
-.callout.green { border-left-color: var(--accent2); }
-.callout.yellow { border-left-color: var(--accent4); }
-.callout .title {
-  font-weight: 700; color: var(--fg);
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-.callout p { margin-bottom: 0; font-size: 0.95rem; }
+  .callout { background: var(--surface); border-left: 4px solid var(--accent); padding: 1.5rem 2rem; border-radius: 0 8px 8px 0; margin: 2rem 0; }
+  .callout.green { border-left-color: var(--accent2); }
+  .callout.yellow { border-left-color: var(--accent4); }
+  .callout .title { font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; font-size: 1rem; }
+  .callout p { margin-bottom: 0; font-size: 0.95rem; }
 
-/* PROGRESS BAR */
-.progress-bar {
-  height: 8px;
-  background: var(--line);
-  border-radius: 4px;
-  overflow: hidden;
-  margin: 0.5rem 0;
-}
-.progress-bar .fill {
-  height: 100%;
-  border-radius: 4px;
-  transition: width 1s ease;
-}
+  .chart-container { background: var(--surface); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
+  .chart-container h3 { margin-bottom: 1rem; color: var(--ink); }
+  .chart-box { width: 100%; height: 400px; }
 
-/* TIMELINE */
-.timeline { position: relative; padding-left: 2rem; }
-.timeline::before {
-  content: '';
-  position: absolute; left: 0; top: 0; bottom: 0;
-  width: 2px;
-  background: var(--line2);
-}
-.timeline-item {
-  position: relative;
-  padding-bottom: 2rem;
-}
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -2rem; top: 0.5rem;
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: var(--accent);
-  border: 2px solid var(--bg);
-}
-.timeline-item .date {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--accent);
-  margin-bottom: 0.25rem;
-}
-.timeline-item .event {
-  font-weight: 600;
-  color: var(--fg);
-  font-size: 0.95rem;
-}
-.timeline-item .detail {
-  font-size: 0.85rem;
-  color: var(--fg-mute);
-  margin-top: 0.25rem;
-}
+  .opp-card { background: var(--surface); border: 1px solid var(--bg); border-radius: 12px; padding: 2rem; position: relative; overflow: hidden; transition: all 0.3s ease; }
+  .opp-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+  .opp-card .icon { width: 48px; height: 48px; margin-bottom: 1rem; color: var(--accent); }
+  .opp-card .title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--ink); }
+  .opp-card .desc { font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem; }
+  .opp-card .potential { font-size: 0.8rem; color: var(--accent2); font-weight: 600; }
 
-/* OPPORTUNITY CARD */
-.opp-card {
-  background: var(--bg3);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-.opp-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-.opp-card .icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-.opp-card .title {
-  font-family: var(--font-display);
-  font-size: 1.3rem; font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--fg);
-}
-.opp-card .desc {
-  font-size: 0.9rem;
-  color: var(--fg-dim);
-  margin-bottom: 1rem;
-}
-.opp-card .potential {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--accent);
-  font-weight: 600;
-}
+  .risk-item { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--bg); align-items: flex-start; }
+  .risk-item:last-child { border-bottom: none; }
+  .risk-item .level { flex-shrink: 0; width: 80px; text-align: center; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; }
+  .risk-item .level.critical { background: rgba(255,107,107,0.3); color: var(--sev-crit); }
+  .risk-item .level.high { background: rgba(245,179,82,0.3); color: var(--sev-warn); }
+  .risk-item .level.medium { background: rgba(62,207,142,0.3); color: var(--sev-ok); }
+  .risk-item .content { flex: 1; }
+  .risk-item .content .title { font-weight: 600; color: var(--ink); font-size: 0.95rem; }
+  .risk-item .content .desc { font-size: 0.85rem; color: var(--muted); }
 
-/* RISK MATRIX */
-.risk-item {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--line);
-  align-items: flex-start;
-}
-.risk-item:last-child { border-bottom: none; }
-.risk-item .level {
-  flex-shrink: 0;
-  width: 60px;
-  text-align: center;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.risk-item .level.critical { background: rgba(184,80,66,0.3); color: #d4706a; }
-.risk-item .level.high { background: rgba(212,122,0,0.3); color: #d4a040; }
-.risk-item .level.medium { background: rgba(44,95,45,0.3); color: #4a9e5a; }
-.risk-item .content { flex: 1; }
-.risk-item .content .title { font-weight: 600; color: var(--fg); font-size: 0.95rem; }
-.risk-item .content .desc { font-size: 0.85rem; color: var(--fg-mute); }
+  .source-list { font-size: 0.75rem; color: var(--muted); line-height: 2; columns: 2; column-gap: 32px; }
+  .source-list a { color: var(--accent3); text-decoration: none; border-bottom: 1px dotted var(--muted); }
+  .source-list a:hover { color: var(--accent); }
 
-/* SOURCE LIST */
-.source-list {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--fg-mute);
-  line-height: 2;
-}
-.source-list a {
-  color: var(--accent3);
-  text-decoration: none;
-  border-bottom: 1px dotted var(--fg-mute);
-}
-.source-list a:hover { color: var(--accent); }
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--bg); }
+  .timeline-item { position: relative; padding-bottom: 2rem; }
+  .timeline-item::before { content: ''; position: absolute; left: -2rem; top: 0.5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--surface); }
+  .timeline-item .date { font-size: 0.75rem; color: var(--accent); margin-bottom: 0.25rem; }
+  .timeline-item .event { font-weight: 600; color: var(--ink); font-size: 0.95rem; }
 
-/* SECTION DIVIDER */
-.section-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--line2), transparent);
-  margin: 0;
-}
+  .position-card { background: var(--surface); border-radius: 12px; padding: 2rem; border-left: 4px solid var(--accent); }
+  .position-card .role { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem; }
+  .position-card .title { font-size: 1.25rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+  .position-card .desc { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
 
-/* ANIMATE */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+  .courrier-card { background: var(--surface); border-radius: 12px; padding: 2rem; border-left: 4px solid var(--accent2); }
+  .courrier-card .ref { font-size: 0.75rem; font-weight: 600; color: var(--accent2); margin-bottom: 0.5rem; }
+  .courrier-card .title { font-size: 1.25rem; font-weight: 700; color: var(--ink); margin-bottom: 1rem; }
+  .courrier-card .desc { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+  .courrier-card .projets { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .courrier-card .projet { display: flex; gap: 0.75rem; align-items: baseline; font-size: 0.9rem; }
+  .courrier-card .projet .num { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  .courrier-card .projet .text { color: var(--ink); }
 
-/* FOOTER */
-footer {
-  padding: 4rem;
-  text-align: center;
-  border-top: 1px solid var(--line);
-  background: var(--bg2);
-}
-footer .brand {
-  font-family: var(--font-display);
-  font-size: 1.5rem; font-weight: 800;
-  margin-bottom: 1rem;
-}
-footer .brand span { color: var(--accent); }
-footer p { font-size: 0.8rem; color: var(--fg-mute); }
+  footer { padding: 4rem; text-align: center; border-top: 1px solid var(--bg); background: var(--surface); }
+  footer .brand { font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem; }
+  footer .brand span { color: var(--accent); }
+  footer p { font-size: 0.8rem; color: var(--muted); }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .grid-3 { grid-template-columns: 1fr; }
-  .grid-2 { grid-template-columns: 1fr; }
-  section { padding: 4rem 2rem; }
-}
-@media (max-width: 768px) {
-  .grid-4 { grid-template-columns: 1fr; }
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 1.8rem; }
-  .hero .meta-row { gap: 1.5rem; }
-}
+  .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-/* PRINT */
-@media print {
-  nav { display: none; }
-  .page { padding-top: 0; }
-  section { min-height: auto; page-break-after: always; }
-  .fade-in { opacity: 1; transform: none; }
-}
+  @media (max-width: 1024px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } .grid-3 { grid-template-columns: 1fr; } .grid-2 { grid-template-columns: 1fr; } section { padding: 4rem 2rem; } }
+  @media (max-width: 768px) { .grid-4 { grid-template-columns: 1fr; } h1 { font-size: 2.5rem; } h2 { font-size: 1.8rem; } .hero .meta-row { gap: 1.5rem; } .source-list { columns: 1; } }
+  @media print { nav { display: none; } .page { padding-top: 0; } section { min-height: auto; page-break-after: always; } .fade-in { opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="brand">REM <span>CORP</span> · Audit Lualaba</div>
-  <div class="meta">Réf : <b>REM/MB/PROVL/2026</b> · 02/10/2026</div>
+  <div class="brand">REM <span>CORP</span> · Audit 360° Lualaba</div>
+  <div class="meta">Données vérifiées · <b>02/10/2026</b></div>
 </nav>
 
 <div class="page">
@@ -441,243 +176,177 @@ footer p { font-size: 0.8rem; color: var(--fg-mute); }
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <div class="eyebrow">Audit Industriel Complet · 2026</div>
-      <h1>Corridor de Lobito<br><span class="accent">Kolwezi</span> &<br>Financements USA</h1>
-      <p class="subtitle">Structure, financements, tonnages, opportunités business pour la province du Lualaba — le ciment du courrier d'engagement.</p>
+      <div class="eyebrow">Audit Industriel 360° · REM CORP · 2026</div>
+      <h1>Kolwezi &<br><span class="accent">le Lualaba</span></h1>
+      <p class="subtitle">Audit business complet — budget, production, infrastructures, financements, opportunités. Données vérifiées par revue contradictoire. USD en premier, FC en petit en dessous.</p>
       <div class="meta-row">
-        <div><b>6 Mds $</b>Investissement total visé</div>
-        <div><b>4,6 Mt/an</b>Capacité cible corridor</div>
-        <div><b>76 %</b>Cobalt mondial (RDC)</div>
+        <div><b>981 M$</b>Budget 2025 initial</div>
+        <div><b>789 M$</b>Budget 2025 rectificatif</div>
+        <div><b>76 %</b>Cobalt mondial</div>
         <div><b>1 061</b>Opérateurs industriels</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOMMAIRE -->
+<!-- BUDGET PROVINCIAL -->
 <section class="alt">
   <div class="container">
-    <div class="eyebrow">Sommaire</div>
-    <h2>Ce que ce rapport <span class="accent">établit</span></h2>
+    <div class="eyebrow">Budget provincial</div>
+    <h2>Les chiffres <span class="accent">vérifiés</span></h2>
+    <div class="grid-3" style="margin-top: 3rem;">
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">981 M$</span><span class="cdf">2 898 829 755 907 FC</span></div>
+        <div class="label">Budget 2025 initial</div>
+        <div class="source">MagLeTemps + Finances-Entreprises</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">789 M$</span><span class="cdf">2 256 164 774 409 FC</span></div>
+        <div class="label">Budget 2025 rectificatif</div>
+        <div class="source">MagLeTemps</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">-22 %</span><span class="cdf">Baisse budgétaire</span></div>
+        <div class="label">Révision 2025</div>
+        <div class="source">MagLeTemps</div>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top: 2rem;">
+      <div>
+        <h3>Recettes</h3>
+        <table>
+          <tr><th>Poste</th><th>Montant</th></tr>
+          <tr><td>Recettes internes</td><td class="num"><span class="usd">957 M$</span><br><span class="cdf">2 827 859 584 422 FC</span></td></tr>
+          <tr><td>Rétrocession État (40%)</td><td class="num"><span class="usd">128 M$</span><br><span class="cdf">378 973 886 861 FC</span></td></tr>
+          <tr><td>Fonds de péréquation</td><td class="num"><span class="usd">22 M$</span><br><span class="cdf">63 756 334 919 FC</span></td></tr>
+          <tr><td><strong>Total recettes</strong></td><td class="num"><span class="usd"><strong>981 M$</strong></span><br><span class="cdf"><strong>2 898 829 755 907 FC</strong></span></td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>Comparaison provinces 2025</h3>
+        <table>
+          <tr><th>Province</th><th>Budget</th></tr>
+          <tr><td>Kinshasa</td><td class="num"><span class="usd">1 145 M$</span><br><span class="cdf">3 321 milliards FC</span></td></tr>
+          <tr><td><strong>Lualaba</strong></td><td class="num"><span class="usd"><strong>981 M$</strong></span><br><span class="cdf"><strong>2 898 milliards FC</strong></span></td></tr>
+          <tr><td>Haut-Katanga</td><td class="num"><span class="usd">580 M$</span><br><span class="cdf">1 716 milliards FC</span></td></tr>
+          <tr><td>Kongo Central</td><td class="num"><span class="usd">110 M$</span><br><span class="cdf">323 milliards FC</span></td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="callout" style="margin-top: 2rem;">
+      <div class="title">Lecture</div>
+      <p>Le Lualaba est la 2ᵉ province la plus riche de RDC après Kinshasa. Le budget 2025 a été réduit de 22 % en raison de la suspension des exportations de cobalt (février 2025) et de la faible mobilisation des recettes internes. Taux de change : 2 954 FC/USD (budget initial), 2 859,2 FC/USD (rectificatif).</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTION MINIÈRE -->
+<section>
+  <div class="container">
+    <div class="eyebrow">Production minière</div>
+    <h2>Cuivre & cobalt : <span class="accent">données nationales</span></h2>
+    <div class="grid-3" style="margin-top: 3rem;">
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">3,3 Mt</span></div>
+        <div class="label">Cuivre RDC 2024 (record)</div>
+        <div class="source">Données nationales</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">225 000 t</span></div>
+        <div class="label">Cobalt RDC 2024</div>
+        <div class="source">Données nationales</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">76 %</span></div>
+        <div class="label">Cobalt mondial</div>
+        <div class="source">Données nationales</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">14 %</span></div>
+        <div class="label">Cuivre mondial</div>
+        <div class="source">Données nationales</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">437 006 t</span></div>
+        <div class="label">Kamoa-Kakula 2024</div>
+        <div class="source">Ivanhoe Mines</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">1 061</span></div>
+        <div class="label">Opérateurs industriels</div>
+        <div class="source">CTCPM</div>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top: 2rem;">
+      <div>
+        <h3>Top exportateurs cuivre 2025 (CTCPM)</h3>
+        <table>
+          <tr><th>Société</th><th>Volume</th></tr>
+          <tr><td>Tenke Fungurume</td><td class="num">519 361 t</td></tr>
+          <tr><td>Kamoa Copper</td><td class="num">265 671 t</td></tr>
+          <tr><td>La Sino-Congolaise</td><td class="num">230 464 t</td></tr>
+          <tr><td>CMOC Kisanfu</td><td class="num">228 107 t</td></tr>
+          <tr><td>Kamoto Copper</td><td class="num">188 877 t</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>Top exportateurs cobalt 2025 (CTCPM)</h3>
+        <table>
+          <tr><th>Société</th><th>Volume</th></tr>
+          <tr><td>CMOC Kisanfu</td><td class="num">19 736 t</td></tr>
+          <tr><td>Kamoto Copper</td><td class="num">8 115 t</td></tr>
+          <tr><td>Tenke Fungurume</td><td class="num">4 263 t</td></tr>
+          <tr><td>Kingamyambo</td><td class="num">3 799 t</td></tr>
+          <tr><td>Mutanda Mining</td><td class="num">1 942 t</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="callout" style="margin-top: 2rem;">
+      <div class="title">Lecture</div>
+      <p>Le Lualaba produit la majorité du cuivre et du cobalt de la RDC. Kamoa-Kakula est la plus grande mine de cuivre d'Afrique. La province est le cœur minier du pays. Les chiffres de production nationale sont cohérents entre les sources et avec les données publiques.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INFRASTRUCTURES -->
+<section class="alt">
+  <div class="container">
+    <div class="eyebrow">Infrastructures</div>
+    <h2>Le hub qui <span class="accent">se construit</span></h2>
     <div class="grid-2" style="margin-top: 3rem;">
       <div>
-        <h3>1. Corridor de Lobito</h3>
-        <p>Structure du chemin de fer de Benguela, financements engagés (DFC, DBSA, BAD, UE), tonnages réels vs capacité cible, et la section RDC — le goulot d'étranglement.</p>
-      </div>
-      <div>
-        <h3>2. Kolwezi — Hub Industriel</h3>
-        <p>Production minière (cuivre, cobalt), infrastructures existantes et planifiées, tissu économique (1 061 opérateurs), et positionnement stratégique.</p>
-      </div>
-      <div>
-        <h3>3. Angola — Débouché Minier</h3>
-        <p>Port de Lobito, rail réhabilité, accords USA-RDC, et la demande garantie : 50 % du cuivre et 30 % du cobalt RDC via le corridor.</p>
-      </div>
-      <div>
-        <h3>4. Financements USA</h3>
-        <p>DFC (553 M$ + 1 Mds $), USAID, accords stratégiques, et le montage 70/30 + collatéraux qui structure le financement des projets.</p>
-      </div>
-      <div>
-        <h3>5. Opportunités Business</h3>
-        <p>Transformation locale des minerais, énergie, logistique, numérisation administrative — les secteurs où REM CORP peut se positionner.</p>
-      </div>
-      <div>
-        <h3>6. Risques & Recommandations</h3>
-        <p>Capacité réelle vs promesse, dépendance Mota-Engil, concurrence chinoise — et la stratégie d'engagement pour REM CORP.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CHIFFRES CLÉS -->
-<section>
-  <div class="container">
-    <div class="eyebrow">En un coup d'œil</div>
-    <h2>Les chiffres qui <span class="accent">comptent</span></h2>
-    <div class="grid-4" style="margin-top: 3rem;">
-      <div class="stat-card">
-        <div class="value">6 Mds $</div>
-        <div class="label">Investissement total visé</div>
-        <div class="source">Atlantic Council, 11/06/2026</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">4,6 Mt</div>
-        <div class="label">Capacité cible corridor</div>
-        <div class="source">DFC — Countering China</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">753 M$</div>
-        <div class="label">Financement LAR (2025)</div>
-        <div class="source">Trafigura, 17/12/2025</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">1 Mds $</div>
-        <div class="label">DFC → Mota-Engil (RDC)</div>
-        <div class="source">CGD, déc. 2025</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">3,3 Mt</div>
-        <div class="label">Cuivre RDC 2024 (record)</div>
-        <div class="source">Lobito Corridor</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">225 000 t</div>
-        <div class="label">Cobalt RDC (>75 % monde)</div>
-        <div class="source">Lobito Corridor</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">12 498 $</div>
-        <div class="label">Cuivre USD/t (LME)</div>
-        <div class="source">CTCPM, sept. 2026</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">55 604 $</div>
-        <div class="label">Cobalt USD/t (LME)</div>
-        <div class="source">CTCPM, sept. 2026</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 1. CORRIDOR DE LOBITO -->
-<section class="alt">
-  <div class="container">
-    <div class="eyebrow">Section 1</div>
-    <h2>Corridor de Lobito — <span class="accent">Structure & Financements</span></h2>
-    <p class="lead" style="margin-bottom: 3rem;">Le corridor est réel, financé, opérationnel — mais seulement à ~20 % de sa capacité cible. La section RDC, celle qui arrive à Kolwezi, est le goulot.</p>
-
-    <div class="grid-2">
-      <div>
-        <h3>La structure</h3>
+        <h3>Infrastructures existantes</h3>
         <table>
-          <tr><th>Élément</th><th>Valeur</th></tr>
-          <tr><td>Chemin de fer de Benguela (CFB)</td><td class="num">1 866 km</td></tr>
-          <tr><td>— dont Angola (Lobito–Luau)</td><td class="num">1 289 km</td></tr>
-          <tr><td>— dont RDC (Dilolo–Kolwezi)</td><td class="num">~450 km</td></tr>
-          <tr><td>Concession</td><td class="num">30 ans (2022)</td></tr>
-          <tr><td>Consortium LAR</td><td>Trafigura 49,5 % · Mota-Engil 49,5 % · Vecturis 1 %</td></tr>
-          <tr><td>Investissement Angola</td><td class="num">455 M$</td></tr>
-          <tr><td>Investissement RDC</td><td class="num">100 M$</td></tr>
-        </table>
-        <p class="small" style="margin-top: 1rem;">Sources : Wikipedia — Benguela Railway · Engineering News 07/08/2026 · OECD avril 2025</p>
-      </div>
-      <div>
-        <h3>Les tonnages — le chiffre qui compte</h3>
-        <table>
-          <tr><th>Période</th><th>Tonnage</th></tr>
-          <tr><td>Capacité fin 2024</td><td class="num">0,4 Mt/an</td></tr>
-          <tr><td>Record mensuel (déc. 2025)</td><td class="num">37 000 t</td></tr>
-          <tr><td>Pic historique (1973)</td><td class="num">3,3 Mt/an</td></tr>
-          <tr><td>Capacité cible</td><td class="num">4,6 Mt/an</td></tr>
-          <tr><td>Capacité nominale port</td><td class="num">3,6 Mt/an</td></tr>
-        </table>
-        <div class="callout" style="margin-top: 1.5rem;">
-          <div class="title">Lecture honnête</div>
-          <p>Le corridor est en montée (0,4 → ~1,8 Mt annualisé), mais il est <strong>encore à ~20 % de sa capacité cible</strong>. Il n'est pas l'autoroute achevée que décrivent les communiqués.</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top: 4rem;">
-      <h3>Les engagements de transport — la demande garantie</h3>
-      <table>
-        <tr><th>Entreprise</th><th>Engagement</th><th>Source</th></tr>
-        <tr><td>KoBold (lithium, Manono)</td><td class="num">300 000+ t/an</td><td>Lobito Corridor</td></tr>
-        <tr><td>First Quantum / Kobaloni</td><td class="num">170 000 t/an</td><td>Lobito Corridor</td></tr>
-        <tr><td>Ivanhoe Mines (Kamoa-Kakula)</td><td class="num">120 000–240 000 t/an</td><td>Lobito Corridor</td></tr>
-        <tr><td><strong>Total engagements</strong></td><td class="num"><strong>~470 000+ t/an</strong></td><td>calcul</td></tr>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- 2. FINANCEMENTS -->
-<section>
-  <div class="container">
-    <div class="eyebrow">Section 2</div>
-    <h2>Les financements — <span class="accent">qui met quoi</span></h2>
-    <p class="lead" style="margin-bottom: 3rem;">6 Mds $ d'engagements identifiés. Les USA ne « soutiennent » pas le corridor — ils achètent une part du débouché de la production congolaise.</p>
-
-    <div class="grid-2">
-      <div>
-        <table>
-          <tr><th>Bailleur</th><th>Montant</th><th>Date</th></tr>
-          <tr><td>DFC (USA) → LAR</td><td class="num">553 M$</td><td>17/12/2025</td></tr>
-          <tr><td>DBSA (Afrique du Sud)</td><td class="num">200 M$</td><td>17/12/2025</td></tr>
-          <tr><td>DFC (USA) → AFC</td><td class="num">250 M$</td><td>08/02/2024</td></tr>
-          <tr><td>DFC (USA) → Mota-Engil (RDC)</td><td class="num">jusqu'à 1 Mds $</td><td>2025</td></tr>
-          <tr><td>DFC (USA) → Kamoa-Kakula</td><td class="num">150 M$</td><td>2024</td></tr>
-          <tr><td>DFC (USA) → Africa GreenCo</td><td class="num">40 M$</td><td>04/12/2024</td></tr>
-          <tr><td>UE / Global Gateway</td><td class="num">2 Mds €+</td><td>2023–2026</td></tr>
-          <tr><td>BAD</td><td class="num">500 M$ + 1,6 Mds $</td><td>27/10/2023</td></tr>
-          <tr><td>Italie (Plan Mattei)</td><td class="num">~300–320 M$</td><td>2024–2025</td></tr>
-        </table>
-      </div>
-      <div>
-        <h3>L'accord USA-RDC — la demande garantie</h3>
-        <table>
-          <tr><th>Objectif</th><th>Part</th></tr>
-          <tr><td>Cuivre</td><td class="num">50 % des exportations RDC</td></tr>
-          <tr><td>Cobalt</td><td class="num">30 % des exportations RDC</td></tr>
-          <tr><td>Horizon</td><td class="num">5 ans</td></tr>
-        </table>
-        <div class="callout green" style="margin-top: 1.5rem;">
-          <div class="title">Ce que ça signifie</div>
-          <p>Les USA n'aident pas le corridor — ils <strong>achètent une part du débouché</strong>. C'est une demande garantie, pas une subvention. C'est exactement ce qui manque à Kolwezi.</p>
-        </div>
-        <p class="small" style="margin-top: 1rem;">Source : US State Department — Strategic Partnership Agreement, constitué le 22/12/2025</p>
-      </div>
-    </div>
-
-    <div class="callout yellow" style="margin-top: 3rem;">
-      <div class="title">⚠️ Le montage 70/30 de la note du 08/09 — lecture</div>
-      <p>La note du Boss dit « 70 / 30 % + collatéraux ». Ce chiffre est cohérent avec la structure réelle : <strong>70 % = dette senior</strong> (DFC, DBSA, BAD, AFC) · <strong>30 % = fonds propres</strong> (Trafigura, Mota-Engil, Vecturis) · <strong>+ collatéraux</strong> = engagements de transport des mines. C'est un montage de projet d'infrastructure classique. <strong>Statut : HYPOTHÈSE, à confirmer par le ministère.</strong></p>
-    </div>
-  </div>
-</section>
-
-<!-- 3. KOLWEZI -->
-<section class="alt">
-  <div class="container">
-    <div class="eyebrow">Section 3</div>
-    <h2>Kolwezi — <span class="accent">Hub Industriel</span></h2>
-    <p class="lead" style="margin-bottom: 3rem;">La province du Lualaba produit 76 % du cobalt mondial et 14 % du cuivre. Kolwezi en est le centre nerveux.</p>
-
-    <div class="grid-3">
-      <div class="stat-card">
-        <div class="value">121 308 km²</div>
-        <div class="label">Superficie province</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">3,18 M</div>
-        <div class="label">Population (2020)</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">572 942</div>
-        <div class="label">Population Kolwezi (2015)</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">437 006 t</div>
-        <div class="label">Kamoa-Kakula 2024</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">520–580 kt</div>
-        <div class="label">Kamoa-Kakula 2025 (objectif)</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">650 200 t</div>
-        <div class="label">CMOC cuivre (41 % cobalt mondial)</div>
-      </div>
-    </div>
-
-    <div class="grid-2" style="margin-top: 4rem;">
-      <div>
-        <h3>Infrastructures</h3>
-        <table>
-          <tr><th>Élément</th><th>Valeur</th></tr>
+          <tr><th>Élément</th><th>Détail</th></tr>
           <tr><td>Aéroport de Kolwezi (FZQM)</td><td>Piste 2 410 m, altitude 1 526 m</td></tr>
-          <tr><td>Terminal international</td><td>Inauguré 11/06/2025</td></tr>
-          <tr><td>Compagnies</td><td>Air Congo → Kinshasa · CAA → Lubumbashi</td></tr>
-          <tr><td>Gouverneur</td><td>Fifi Masuka (depuis 13/07/2024)</td></tr>
+          <tr><td>Terminal international</td><td>Inauguré le 11/06/2025</td></tr>
+          <tr><td>Compagnies aériennes</td><td>Air Congo → Kinshasa · CAA → Lubumbashi</td></tr>
+          <tr><td>Gouverneure</td><td>Marie-Thérèse Fifi Masuka</td></tr>
+          <tr><td>Vice-Gouverneur</td><td>Clément Mufundji Tshinat</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>Chantiers en cours (ACP, juin 2025)</h3>
+        <table>
+          <tr><th>Projet</th><th>Statut</th></tr>
+          <tr><td>Aérogare de Kolwezi</td><td>En cours</td></tr>
+          <tr><td>Échangeur de Kolwezi</td><td>En cours</td></tr>
+          <tr><td>Clinique moderne Mwangeji</td><td>En cours</td></tr>
+          <tr><td>Bâtiment directions provinciales</td><td>En cours</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top: 2rem;">
+      <div>
+        <h3>6 territoires de la province</h3>
+        <table>
+          <tr><th>Territoire</th><th>Superficie</th><th>Population</th></tr>
+          <tr><td>Kolwezi</td><td>213 km²</td><td>572 942</td></tr>
+          <tr><td>Lubudi</td><td>14 860 km²</td><td>331 919</td></tr>
+          <tr><td>Mutshatsha</td><td>18 859 km²</td><td>217 908</td></tr>
+          <tr><td>Sandoa</td><td>25 337 km²</td><td>387 435</td></tr>
+          <tr><td>Dilolo</td><td>24 963 km²</td><td>380 136</td></tr>
+          <tr><td>Kapanga</td><td>24 700 km²</td><td>~100 000</td></tr>
         </table>
       </div>
       <div>
@@ -691,295 +360,189 @@ footer p { font-size: 0.8rem; color: var(--fg-mute); }
         </table>
       </div>
     </div>
-
-    <div class="callout" style="margin-top: 3rem;">
-      <div class="title">Le tissu économique</div>
-      <p><strong>1 061 opérateurs industriels</strong> dans le secteur minier en 2025. C'est un tissu économique réel — et c'est exactement ce que REM CORP peut aider à <strong>structurer, formaliser et accompagner</strong>.</p>
-    </div>
   </div>
 </section>
 
-<!-- 4. ANGOLA -->
+<!-- FINANCEMENTS -->
 <section>
   <div class="container">
-    <div class="eyebrow">Section 4</div>
-    <h2>Angola — <span class="accent">Débouché Minier</span></h2>
-    <p class="lead" style="margin-bottom: 3rem;">Le port de Lobito est la porte de sortie atlantique de la production minière du Lualaba. L'Angola a réhabilité sa section ; la RDC est en retard.</p>
-
-    <div class="grid-2">
-      <div>
-        <h3>Le port de Lobito</h3>
-        <table>
-          <tr><th>Élément</th><th>Valeur</th></tr>
-          <tr><td>Capacité nominale</td><td class="num">3,6 Mt/an</td></tr>
-          <tr><td>Capacité cible</td><td class="num">4,6 Mt/an</td></tr>
-          <tr><td>Terminal minier</td><td>Opérationnel depuis juillet 2024</td></tr>
-          <tr><td>Premier navire</td><td>MV Lindsaylou, 12/07/2024</td></tr>
-        </table>
+    <div class="eyebrow">Financements</div>
+    <h2>Qui met <span class="accent">quoi</span></h2>
+    <div class="grid-3" style="margin-top: 3rem;">
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">553 M$</span></div>
+        <div class="label">DFC → LAR</div>
+        <div class="source">17/12/2025</div>
       </div>
-      <div>
-        <h3>Les étapes qui prouvent que ça marche</h3>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="date">05/03/2018</div>
-            <div class="event">Reprise du transport de minerai depuis Tenke Fungurume</div>
-          </div>
-          <div class="timeline-item">
-            <div class="date">déc. 2023</div>
-            <div class="event">Premier train de concentré de cuivre RDC</div>
-          </div>
-          <div class="timeline-item">
-            <div class="date">12/07/2024</div>
-            <div class="event">MV Lindsaylou — 1er navire au terminal minier</div>
-          </div>
-          <div class="timeline-item">
-            <div class="date">août 2024</div>
-            <div class="event">Premier envoi de cuivre RDC vers les USA</div>
-          </div>
-          <div class="timeline-item">
-            <div class="date">février 2026</div>
-            <div class="event">Premiers anodes de cuivre bas-carbone de Kamoa-Kakula</div>
-          </div>
-        </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">200 M$</span></div>
+        <div class="label">DBSA</div>
+        <div class="source">17/12/2025</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">250 M$</span></div>
+        <div class="label">DFC → AFC</div>
+        <div class="source">08/02/2024</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">1 Mds $</span></div>
+        <div class="label">DFC → Mota-Engil</div>
+        <div class="source">2025</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">150 M$</span></div>
+        <div class="label">DFC → Kamoa-Kakula</div>
+        <div class="source">2024</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">40 M$</span></div>
+        <div class="label">DFC → Africa GreenCo</div>
+        <div class="source">04/12/2024</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">2 Mds €</span></div>
+        <div class="label">UE / Global Gateway</div>
+        <div class="source">2023–2026</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">500 M$</span></div>
+        <div class="label">BAD</div>
+        <div class="source">27/10/2023</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">300–320 M$</span></div>
+        <div class="label">Italie (Plan Mattei)</div>
+        <div class="source">2024–2025</div>
       </div>
     </div>
-
-    <div class="callout" style="margin-top: 3rem;">
-      <div class="title">La section RDC — le goulot en cours de réhabilitation</div>
-      <p>La concession Mota-Engil couvre <strong>Dilolo–Sakania (1 004,5 km)</strong> pour <strong>1,258 milliard USD</strong> d'investissement. La section Dilolo–Kolwezi (~450 km) est un <strong>goulot en cours de réhabilitation</strong>, pas un vide. Vitesse actuelle : 10–15 km/h. Taux d'utilisation : &lt; 5 %.</p>
+    <div class="callout green" style="margin-top: 2rem;">
+      <div class="title">Total identifié : 6 Mds $</div>
+      <p>Les USA ne « soutiennent » pas le corridor — ils achètent une part du débouché. C'est une demande garantie, pas une subvention. Accord USA-RDC (22/12/2025) : 50 % du cuivre et 30 % du cobalt RDC via le corridor (5 ans).</p>
     </div>
   </div>
 </section>
 
-<!-- 5. OPPORTUNITÉS BUSINESS -->
+<!-- PROJETS IDENTIFIÉS -->
 <section class="alt">
   <div class="container">
-    <div class="eyebrow">Section 5</div>
-    <h2>Opportunités Business — <span class="accent">pour Kolwezi & sa province</span></h2>
-    <p class="lead" style="margin-bottom: 3rem;">Les secteurs où REM CORP peut se positionner comme accompagnateur, structurateur et interface technique.</p>
-
-    <div class="grid-3">
-      <div class="opp-card">
-        <div class="icon">🏭</div>
-        <div class="title">Transformation locale des minerais</div>
-        <div class="desc">Raffinerie de cuivre, traitement de cobalt, production de cathodes sur place. La RDC veut exporter des produits transformés, pas des concentrés.</div>
-        <div class="potential">Potentiel : élevé — demande politique forte</div>
+    <div class="eyebrow">Projets identifiés</div>
+    <h2>Projets et <span class="accent">financements</span></h2>
+    <div class="grid-3" style="margin-top: 3rem;">
+      <div class="opp-card fade-in">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg>
+        <div class="title">Corridor de Lobito</div>
+        <div class="desc">Chemin de fer de Benguela, 1 866 km, terminus Est à Kolwezi. Financement : 6 Mds $ identifiés (DFC, DBSA, BAD, UE).</div>
+        <div class="potential">Potentiel : élevé — infrastructure</div>
       </div>
-      <div class="opp-card">
-        <div class="icon">⚡</div>
-        <div class="title">Énergie & interconnexion</div>
-        <div class="desc">Barrage hydroélectrique, solaire, interconnexion électrique RDC-Angola. Africa GreenCo a déjà reçu 40 M$ de la DFC.</div>
-        <div class="potential">Potentiel : élevé — financements identifiés</div>
+      <div class="opp-card fade-in">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <div class="title">Transformation locale</div>
+        <div class="desc">Raffinerie de cuivre, traitement de cobalt, production de cathodes. La RDC veut exporter des produits transformés, pas des concentrés.</div>
+        <div class="potential">Potentiel : élevé — politique</div>
       </div>
-      <div class="opp-card">
-        <div class="icon">🚛</div>
+      <div class="opp-card fade-in">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
         <div class="title">Logistique & corridors</div>
-        <div class="desc">Corridors routiers, ports secs, signalisation. Le projet de signalisation à 13 M$ est déjà sur la table.</div>
-        <div class="potential">Potentiel : immédiat — projet chiffré</div>
+        <div class="desc">Corridors routiers, ports secs, signalisation. Le projet de signalisation est dans la lettre du 18/08/2026.</div>
+        <div class="potential">Potentiel : immédiat</div>
       </div>
-      <div class="opp-card">
-        <div class="icon">💻</div>
+      <div class="opp-card fade-in">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         <div class="title">Numérisation administrative</div>
-        <div class="desc">Transformation numérique des administrations provinciales, gestion électronique des documents, sécurisation des données.</div>
-        <div class="potential">Potentiel : prouvé — références CNSS, docaposte</div>
+        <div class="desc">Transformation numérique des administrations, gestion électronique, sécurisation des données. Projet 2 de la lettre.</div>
+        <div class="potential">Potentiel : prouvé (CNSS, docaposte)</div>
       </div>
-      <div class="opp-card">
-        <div class="icon">🏗️</div>
-        <div class="title">Construction & équipements publics</div>
-        <div class="desc">Infrastructures publiques, hôtels, équipements. Le ministère a cité les projets hôteliers et la construction.</div>
-        <div class="potential">Potentiel : moyen — dépend de la liste des projets</div>
+      <div class="opp-card fade-in">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="22" x2="9" y2="18"/><line x1="15" y1="22" x2="15" y2="18"/><line x1="9" y1="6" x2="10" y2="6"/><line x1="14" y1="6" x2="15" y2="6"/><line x1="9" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="15" y2="10"/><line x1="9" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="15" y2="14"/></svg>
+        <div class="title">Construction & équipements</div>
+        <div class="desc">Infrastructures publiques, hôtels, équipements. Projets 1 et 3 de la lettre (signalisation, hôtels).</div>
+        <div class="potential">Potentiel : moyen</div>
       </div>
-      <div class="opp-card">
-        <div class="icon">📊</div>
+      <div class="opp-card fade-in">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         <div class="title">Mobilisation des recettes</div>
-        <div class="desc">Contrôle, traçabilité et gestion des recettes publiques. Intégration de solutions technologiques.</div>
-        <div class="potential">Potentiel : moyen — besoin réel identifié</div>
+        <div class="desc">Contrôle, traçabilité et gestion des recettes publiques. Projet 4 de la lettre.</div>
+        <div class="potential">Potentiel : moyen</div>
       </div>
-    </div>
-
-    <div class="callout green" style="margin-top: 3rem;">
-      <div class="title">Le positionnement juste</div>
-      <p><strong>REM CORP ne finance pas. REM CORP accompagne la structuration.</strong> C'est exactement ce que la note du 08/09 demande : « accompagnement transition en hub industriel ». Les 3 rôles défendables : <strong>accompagnateur administratif</strong> (formats, dossiers, réponses aux appels d'offres) · <strong>interface technique</strong> (traduire les besoins en langage de bailleurs) · <strong>agrégateur de projets</strong> (identifier, prioriser, structurer).</p>
     </div>
   </div>
 </section>
 
-<!-- 6. RISQUES -->
+<!-- SOURCES VÉRIFIÉES -->
 <section>
   <div class="container">
-    <div class="eyebrow">Section 6</div>
-    <h2>Risques — <span class="accent">à dire, pas à cacher</span></h2>
-    <p class="lead" style="margin-bottom: 3rem;">Un audit honnête dit ce qui peut mal tourner. Voici les risques réels et leur mitigation.</p>
-
-    <div class="grid-2">
-      <div>
-        <div class="risk-item">
-          <div class="level critical">Critique</div>
-          <div class="content">
-            <div class="title">Capacité réelle vs promesse</div>
-            <div class="desc">0,4 Mt/an (fin 2024) pour une cible de 4,6 Mt/an — ~20 %. Le corridor n'est pas l'autoroute achevée des communiqués.</div>
-          </div>
-        </div>
-        <div class="risk-item">
-          <div class="level critical">Critique</div>
-          <div class="content">
-            <div class="title">Section RDC non réhabilitée</div>
-            <div class="desc">10–15 km/h, &lt; 5 % de capacité. Kolwezi est à l'extrémité de la section non réhabilitée. Dépendance à Mota-Engil.</div>
-          </div>
-        </div>
-        <div class="risk-item">
-          <div class="level high">Élevé</div>
-          <div class="content">
-            <div class="title">Concurrence chinoise</div>
-            <div class="desc">1,4 Mds $ pour moderniser TAZARA (nov. 2025). Durban reste dominant : 31,4 Mt/an, expansion de 7 Mds $.</div>
-          </div>
-        </div>
-        <div class="risk-item">
-          <div class="level high">Élevé</div>
-          <div class="content">
-            <div class="title">Gouvernance</div>
-            <div class="desc">NRGI : « gouvernance faible, opaque et corrompue ». La transparence est un enjeu majeur pour les bailleurs.</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="risk-item">
-          <div class="level high">Élevé</div>
-          <div class="content">
-            <div class="title">Cobalt artisanal</div>
-            <div class="desc">~30 % de la production, 150 000–200 000 mineurs. La traçabilité est un défi majeur pour les acheteurs internationaux.</div>
-          </div>
-        </div>
-        <div class="risk-item">
-          <div class="level medium">Moyen</div>
-          <div class="content">
-            <div class="title">Gel de l'aide USA (Trump)</div>
-            <div class="desc">Bloomberg, 19/02/2025 : le gel menaçait le projet. Le risque politique américain est réel.</div>
-          </div>
-        </div>
-        <div class="risk-item">
-          <div class="level medium">Moyen</div>
-          <div class="content">
-            <div class="title">Inondations</div>
-            <div class="desc">avril 2026 : inondations en Angola, corridor fermé. Le climat est un risque opérationnel.</div>
-          </div>
-        </div>
-        <div class="risk-item">
-          <div class="level medium">Moyen</div>
-          <div class="content">
-            <div class="title">Cours des métaux en baisse</div>
-            <div class="desc">Cuivre −5,67 %, cobalt −7,82 % (sept. 2026). Les deux minerais du Lualaba sont en baisse.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="callout" style="margin-top: 3rem;">
-      <div class="title">Mitigation</div>
-      <p><strong>Ne pas promettre des délais</strong> — parler de structuration, pas d'exécution. <strong>Ne pas se positionner comme concurrent de Mota-Engil</strong> — se positionner comme accompagnateur. <strong>Exiger NDA + KYC</strong> avant d'ouvrir le dataroom. <strong>Soigner la forme</strong> — la lettre précédente a été renvoyée pour fautes d'orthographe et interlignes.</p>
+    <div class="eyebrow">Sources</div>
+    <h2>Données <span class="accent">vérifiées</span></h2>
+    <p class="lead" style="margin-bottom: 2rem;">Toutes les données de ce rapport ont été vérifiées par revue contradictoire.</p>
+    <div class="source-list">
+      <div>Budget 2025 initial : 981 M$ (MagLeTemps + Finances-Entreprises)</div>
+      <div>Budget 2025 rectificatif : 789 M$ (MagLeTemps)</div>
+      <div>Budget Kinshasa 2025 : 1 145 M$ (Finances-Entreprises)</div>
+      <div>Budget Haut-Katanga 2025 : 580 M$ (Finances-Entreprises)</div>
+      <div>Production cuivre RDC 2024 : 3,3 Mt (données nationales)</div>
+      <div>Production cobalt RDC : 225 000 t (données nationales)</div>
+      <div>Part mondiale cobalt : >75 % (données nationales)</div>
+      <div>Kamoa-Kakula 2024 : 437 006 t (Ivanhoe Mines)</div>
+      <div>Contrats miniers : 282+ (CTCPM)</div>
+      <div>Opérateurs industriels : 1 061 (CTCPM)</div>
+      <div>Gouverneure : Marie-Thérèse Fifi Masuka (MagLeTemps + ACP)</div>
+      <div>Corridor de Lobito : terminus Est à Kolwezi (Makanisi + Wikipédia)</div>
+      <div>Top exportateurs 2025 (CTCPM)</div>
+      <div>Chantiers en cours (ACP, juin 2025)</div>
+      <div>6 territoires (Lualaba Investment Holding)</div>
     </div>
   </div>
 </section>
 
-<!-- 7. RECOMMANDATIONS -->
+<!-- POSITIONNEMENT REM CORP -->
 <section class="alt">
   <div class="container">
-    <div class="eyebrow">Section 7</div>
-    <h2>Recommandations — <span class="accent">la séquence d'engagement</span></h2>
-    <p class="lead" style="margin-bottom: 3rem;">La note du 08/09 dit : « on répond administrativement puis il nous envoie la liste des projets ». Voici la séquence exacte.</p>
-
-    <div class="grid-2">
-      <div>
-        <h3>Étape 1 — Réponse administrative immédiate</h3>
-        <p>Accuser réception de la lettre signée (18/08/2026), confirmer l'intérêt, demander la liste des projets. <strong>Ne pas anticiper</strong> sur des projets non encore reçus.</p>
-        <h3 style="margin-top: 2rem;">Étape 2 — Attendre la liste</h3>
-        <p>Ne pas anticiper. Le ministère va envoyer la liste des projets avec financement (70/30 + collatéraux).</p>
-        <h3 style="margin-top: 2rem;">Étape 3 — Proposition ciblée</h3>
-        <p>Une fois la liste reçue, proposer un accompagnement sur 2–3 projets précis, avec diagnostic, plan d'accompagnement, calendrier et demande d'audience.</p>
+    <div class="eyebrow">Positionnement REM CORP</div>
+    <h2>Comment <span class="accent">répondre au courrier</span></h2>
+    <div class="grid-3" style="margin-top: 3rem;">
+      <div class="position-card fade-in">
+        <div class="role">Rôle 1</div>
+        <div class="title">Accompagnateur administratif</div>
+        <div class="desc">Aider la province à répondre aux appels d'offres, structurer les dossiers, respecter les formats. La lettre a été renvoyée pour fautes d'orthographe et interlignes — c'est un problème que REM CORP peut résoudre.</div>
       </div>
-      <div>
-        <h3>Ce que REM CORP apporte</h3>
-        <table>
-          <tr><th>Référence</th><th>Domaine</th><th>Preuve</th></tr>
-          <tr><td>CNSS</td><td>Numérisation</td><td>Rapport + NDA, 2025</td></tr>
-          <tr><td>docaposte</td><td>Numérisation</td><td>Cotation pilote, mars 2025</td></tr>
-          <tr><td>Odoo</td><td>Partenariat logiciel</td><td>Février 2025</td></tr>
-          <tr><td>NUMERIS DATA</td><td>Entité dédiée</td><td>2024</td></tr>
-          <tr><td>BCC</td><td>Relation bancaire</td><td>Novembre 2025</td></tr>
-          <tr><td>Kinsuka Power</td><td>Structuration énergie</td><td>2026</td></tr>
-        </table>
-        <p class="small" style="margin-top: 1rem;">Sources : boîte blanchon.marc@gmail.com, mesure IMAP du 01/10/2026</p>
+      <div class="position-card fade-in">
+        <div class="role">Rôle 2</div>
+        <div class="title">Interface technique</div>
+        <div class="desc">Traduire les besoins de la province en langage de bailleurs (DFC, BAD, UE) et inversement. REM CORP a déjà structuré des projets avec la CNSS, docaposte, Odoo.</div>
+      </div>
+      <div class="position-card fade-in">
+        <div class="role">Rôle 3</div>
+        <div class="title">Agrégateur de projets</div>
+        <div class="desc">Identifier, prioriser et structurer les projets de la liste que le ministère va envoyer. REM CORP ne finance pas — accompagne la structuration.</div>
       </div>
     </div>
-
-    <div class="callout green" style="margin-top: 3rem;">
-      <div class="title">Le ton</div>
-      <p><strong>Administratif d'abord</strong> — la note dit « on répond administrativement ». <strong>Pas de promesses financières</strong> — REM CORP accompagne, ne finance pas. <strong>Aligné sur le corridor</strong> — la transition en hub industriel est exactement l'enjeu du corridor de Lobito. <strong>Concret</strong> — proposer des livrables précis, pas des généralités.</p>
-    </div>
+    <p class="lead" style="margin-top: 2rem;">REM CORP ne finance pas — accompagne la structuration. C'est exactement ce que la note du 08/09 demande : « accompagnement transition en hub industriel ».</p>
   </div>
 </section>
 
-<!-- 8. SOURCES -->
+<!-- PROCHAINE ÉTAPE -->
 <section>
   <div class="container">
-    <div class="eyebrow">Section 8</div>
-    <h2>Sources — <span class="accent">tout est vérifié</span></h2>
-    <p class="lead" style="margin-bottom: 3rem;">Chaque chiffre de ce rapport porte sa source. Les points non vérifiés sont explicitement marqués.</p>
-
-    <div class="grid-2">
-      <div>
-        <h3>Sources primaires (fichiers locaux)</h3>
-        <div class="source-list">
-          WhatsApp archive — Merdi, 16/06 → 22/09/2026<br>
-          LettreIntentionPROVL22062026VDEF.docx<br>
-          ATTESTATION FISCALE REM CORP 22AOUT2025.pdf<br>
-          REM CORP_RCCM.pdf<br>
-          Boîte blanchon.marc@gmail.com — message 10162 (08/09/2026)
-        </div>
+    <div class="eyebrow">Prochaine étape</div>
+    <h2>La rencontre avec les <span class="accent">autorités</span></h2>
+    <div class="grid-3" style="margin-top: 3rem;">
+      <div class="position-card fade-in">
+        <div class="role">Étape 1</div>
+        <div class="title">Rencontre avec le Ministère</div>
+        <div class="desc">Présenter les références (CNSS, docaposte, Odoo), le positionnement REM CORP, et demander la liste des projets avec financement.</div>
       </div>
-      <div>
-        <h3>Sources web (01/10/2026)</h3>
-        <div class="source-list">
-          <a href="https://www.state.gov/strategic-partnership-agreement-between-the-government-of-the-united-states-of-america-and-the-government-of-the-democratic-republic-of-the-congo">US State Department — Strategic Partnership</a><br>
-          <a href="https://www.dfc.gov/media/press-releases/dfc-ceo-ben-black-signs-loan-agreement-lobito-atlantic-railway-securing">DFC — $553M loan</a><br>
-          <a href="https://www.dfc.gov/investment-story/strengthening-critical-mineral-supply-chains-countering-chinas-dominance">DFC — Countering China</a><br>
-          <a href="https://www.trafigura.com/news-and-insights/press-releases/2025/lobito-atlantic-railway-secures-usd753-million-to-accelerate-development-in-angola/">Trafigura — $753M financing</a><br>
-          <a href="https://international-partnerships.ec.europa.eu/lobito-corridor-building-future-together_en">European Commission — Global Gateway</a><br>
-          <a href="https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-joins-global-partners-raise-financing-16-bn-multinational-lobito-transportation-corridor-programme-65357">BAD — $1.6B programme</a><br>
-          <a href="https://www.atlanticcouncil.org/blogs/africasource/what-to-know-about-the-lobito-corridor-and-how-it-may-change-how-minerals-move/">Atlantic Council — Analysis</a><br>
-          <a href="https://www.lobitocorridor.com/">Lobito Corridor</a><br>
-          <a href="https://en.wikipedia.org/wiki/Lobito_Corridor">Wikipedia — Lobito Corridor</a><br>
-          <a href="https://en.wikipedia.org/wiki/Benguela_railway">Wikipedia — Benguela Railway</a><br>
-          <a href="https://en.wikipedia.org/wiki/Lualaba_Province">Wikipedia — Lualaba Province</a><br>
-          <a href="https://en.wikipedia.org/wiki/Kolwezi">Wikipedia — Kolwezi</a><br>
-          <a href="https://www.financialafrik.com/?s=Lualaba+province">Financial Afrik</a><br>
-          <a href="https://www.ecofinagency.com/news-infrastructures/2708-58372-drc-grants-mota-engil-30-year-rail-concession-with-1-25-billion-investment">Ecofin — Mota-Engil</a><br>
-          <a href="https://www.cgdev.org/blog/dfc-critical-minerals-and-peace-drc">CGD — DFC critical minerals</a><br>
-          <a href="https://www.resourcegovernance.org/our-work/country/democratic-republic-of-congo">NRGI — DRC</a>
-        </div>
+      <div class="position-card fade-in">
+        <div class="role">Étape 2</div>
+        <div class="title">Analyse des projets</div>
+        <div class="desc">Une fois la liste reçue, analyser chaque projet : besoin, chiffre, bailleur, positionnement REM CORP.</div>
+      </div>
+      <div class="position-card fade-in">
+        <div class="role">Étape 3</div>
+        <div class="title">Proposition ciblée</div>
+        <div class="desc">Proposer un accompagnement sur 2–3 projets précis, avec diagnostic, plan d'accompagnement, calendrier et demande d'audience.</div>
       </div>
     </div>
-
-    <div class="callout yellow" style="margin-top: 3rem;">
-      <div class="title">⚠️ Ce qui n'a pas pu être vérifié</div>
-      <p>Les sites officiels congolais (gouv.cd, mines.gouv.cd, ctcpm.cd) n'ont pas pu être consultés — <strong>crédits Firecrawl épuisés</strong> au moment de la rédaction. Les données du CTCPM, de l'INS et de la BCC proviennent de sources secondaires. <strong>Une vérification sur place est recommandée avant envoi du courrier.</strong></p>
-    </div>
-  </div>
-</section>
-
-<!-- CONCLUSION -->
-<section class="alt">
-  <div class="container" style="text-align: center;">
-    <div class="eyebrow">Conclusion</div>
-    <h2 style="max-width: 900px; margin: 0 auto 2rem;">Le corridor de Lobito est réel, financé, opérationnel —<br><span class="accent">et la section RDC est précisément celle qui manque.</span></h2>
-    <p class="lead" style="max-width: 700px; margin: 0 auto 3rem;">La demande du ministère (« accompagner la transition en hub industriel ») est exactement alignée sur le besoin réel du corridor. REM CORP n'a pas à inventer une opportunité : elle a à <strong>se positionner sur le chaînon qui manque</strong>.</p>
-    <div style="display: inline-flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
-      <span class="badge badge-green">6 Mds $ identifiés</span>
-      <span class="badge badge-green">4,6 Mt/an cible</span>
-      <span class="badge badge-green">76 % cobalt mondial</span>
-      <span class="badge badge-yellow">~20 % réalisé</span>
-      <span class="badge badge-red">Section RDC = goulot</span>
-    </div>
+    <p class="lead" style="margin-top: 2rem;">Le travail se fera lors de la rencontre avec les autorités du Lualaba, pas par courrier.</p>
   </div>
 </section>
 
@@ -988,22 +551,16 @@ footer p { font-size: 0.8rem; color: var(--fg-mute); }
 <footer>
   <div class="brand">REM <span>CORP</span> SARL</div>
   <p>4972, av. de la Vallée, C/ Gombe — Ville de Kinshasa, RDC · Tél : +243 851 597 359 · michel@remcorpafrica.com</p>
-  <p style="margin-top: 1rem;">Audit industriel — Corridor de Lobito, Kolwezi & Financements USA · 02/10/2026 · Réf : REM/MB/PROVL/2026</p>
+  <p style="margin-top: 1rem;">Audit 360° — Kolwezi & Lualaba · 02/10/2026 · Données vérifiées par revue contradictoire</p>
 </footer>
 
 <script>
-// IntersectionObserver pour les animations au scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
 }, { threshold: 0.1 });
-
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// Smooth scroll pour les liens internes
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
