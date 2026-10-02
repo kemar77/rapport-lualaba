@@ -3,10 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Audit 360° Business — Kolwezi & Lualaba · REM CORP · 2026</title>
-<script src="https://cdn.jsdelivr.net/npm/echarts@6.1.0/dist/echarts.min.js"
-        integrity="sha384-C2iskrW/uPW46KzOjrvJIQo4YkV8lkD+QS0CrDN18IIPIpT/g2USu8bTP3nvmIAD"
-        crossorigin="anonymous"></script>
+<title>Lualaba — Où l'argent se prend · REM CORP · 2026</title>
 <style>
   :root {
     --bg:      #0b0e14;
@@ -92,23 +89,15 @@
   td .cdf { font-size: 0.8rem; color: var(--muted); }
   tr:hover td { background: rgba(20,21,249,0.05); }
 
-  .badge { display: inline-block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.25rem 0.75rem; border-radius: 4px; font-weight: 600; }
-  .badge-green { background: rgba(21,247,1,0.2); color: var(--accent2); border: 1px solid rgba(21,247,1,0.4); }
-  .badge-red { background: rgba(255,107,107,0.2); color: var(--sev-crit); border: 1px solid rgba(255,107,107,0.4); }
-  .badge-yellow { background: rgba(212,122,0,0.2); color: var(--accent4); border: 1px solid rgba(212,122,0,0.4); }
-  .badge-gray { background: var(--surface); color: var(--muted); border: 1px solid var(--bg); }
-
   .callout { background: var(--surface); border-left: 4px solid var(--accent); padding: 1.5rem 2rem; border-radius: 0 8px 8px 0; margin: 2rem 0; }
+  section.alt .callout { background: var(--bg); }
   .callout.green { border-left-color: var(--accent2); }
   .callout.yellow { border-left-color: var(--accent4); }
   .callout .title { font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; font-size: 1rem; }
   .callout p { margin-bottom: 0; font-size: 0.95rem; }
 
-  .chart-container { background: var(--surface); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
-  .chart-container h3 { margin-bottom: 1rem; color: var(--ink); }
-  .chart-box { width: 100%; height: 400px; }
-
   .opp-card { background: var(--surface); border: 1px solid var(--bg); border-radius: 12px; padding: 2rem; position: relative; overflow: hidden; transition: all 0.3s ease; }
+  section.alt .opp-card { background: var(--bg); }
   .opp-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
   .opp-card .icon { width: 48px; height: 48px; margin-bottom: 1rem; color: var(--accent); }
   .opp-card .title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--ink); }
@@ -137,18 +126,16 @@
   .timeline-item .event { font-weight: 600; color: var(--ink); font-size: 0.95rem; }
 
   .position-card { background: var(--surface); border-radius: 12px; padding: 2rem; border-left: 4px solid var(--accent); }
+  section.alt .position-card { background: var(--bg); }
   .position-card .role { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem; }
   .position-card .title { font-size: 1.25rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
   .position-card .desc { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
 
   .courrier-card { background: var(--surface); border-radius: 12px; padding: 2rem; border-left: 4px solid var(--accent2); }
+  section.alt .courrier-card { background: var(--bg); }
   .courrier-card .ref { font-size: 0.75rem; font-weight: 600; color: var(--accent2); margin-bottom: 0.5rem; }
   .courrier-card .title { font-size: 1.25rem; font-weight: 700; color: var(--ink); margin-bottom: 1rem; }
   .courrier-card .desc { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
-  .courrier-card .projets { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
-  .courrier-card .projet { display: flex; gap: 0.75rem; align-items: baseline; font-size: 0.9rem; }
-  .courrier-card .projet .num { color: var(--accent); font-weight: 700; flex-shrink: 0; }
-  .courrier-card .projet .text { color: var(--ink); }
 
   footer { padding: 4rem; text-align: center; border-top: 1px solid var(--bg); background: var(--surface); }
   footer .brand { font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem; }
@@ -166,8 +153,8 @@
 <body>
 
 <nav>
-  <div class="brand">REM <span>CORP</span> · Audit 360° Lualaba</div>
-  <div class="meta">Données vérifiées · <b>02/10/2026</b></div>
+  <div class="brand">REM <span>CORP</span> · Lualaba — où l'argent se prend</div>
+  <div class="meta">Données sourcées · <b>02/10/2026</b></div>
 </nav>
 
 <div class="page">
@@ -176,29 +163,29 @@
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <div class="eyebrow">Audit Industriel 360° · REM CORP · 2026</div>
-      <h1>Kolwezi &<br><span class="accent">le Lualaba</span></h1>
-      <p class="subtitle">Audit business complet — budget, production, infrastructures, financements, opportunités. Données vérifiées par revue contradictoire. USD en premier, FC en petit en dessous.</p>
+      <div class="eyebrow">REM CORP · Cartographie de l'argent · 2026</div>
+      <h1>Lualaba :<br><span class="accent">où l'argent se prend</span></h1>
+      <p class="subtitle">Le budget du gouvernorat, les flux miniers qui le financent, l'argent extérieur engagé sur le corridor, les projets déjà en chantier — et les portes d'entrée pour capter. Données sourcées en ligne, revue contradictoire. USD en premier, FC en petit.</p>
       <div class="meta-row">
-        <div><b>981 M$</b>Budget 2025 initial</div>
-        <div><b>789 M$</b>Budget 2025 rectificatif</div>
-        <div><b>76 %</b>Cobalt mondial</div>
-        <div><b>1 061</b>Opérateurs industriels</div>
+        <div><b>981 M$</b>Budget provincial 2025</div>
+        <div><b>6 Mds $</b>Objectif d'investissement corridor visé</div>
+        <div><b>76 %</b>Cobalt mondial (assiette)</div>
+        <div><b>2 062</b>Opérateurs industriels + artisanaux</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BUDGET PROVINCIAL -->
+<!-- 1. LE BUDGET DU GOUVERNORAT -->
 <section class="alt">
   <div class="container">
-    <div class="eyebrow">Budget provincial</div>
-    <h2>Les chiffres <span class="accent">vérifiés</span></h2>
+    <div class="eyebrow">Flux n°1 — l'argent public provincial</div>
+    <h2>Le budget du <span class="accent">gouvernorat</span></h2>
     <div class="grid-3" style="margin-top: 3rem;">
       <div class="stat-card fade-in">
         <div class="value"><span class="usd">981 M$</span><span class="cdf">2 898 829 755 907 FC</span></div>
         <div class="label">Budget 2025 initial</div>
-        <div class="source">MagLeTemps + Finances-Entreprises</div>
+        <div class="source">MagLeTemps + document budgétaire (Scribd)</div>
       </div>
       <div class="stat-card fade-in">
         <div class="value"><span class="usd">789 M$</span><span class="cdf">2 256 164 774 409 FC</span></div>
@@ -206,75 +193,72 @@
         <div class="source">MagLeTemps</div>
       </div>
       <div class="stat-card fade-in">
-        <div class="value"><span class="usd">-22 %</span><span class="cdf">Baisse budgétaire</span></div>
-        <div class="label">Révision 2025</div>
-        <div class="source">MagLeTemps</div>
+        <div class="value"><span class="usd">957 M$</span><span class="cdf">2 827 859 584 422 FC</span></div>
+        <div class="label">Recettes internes prévues (document budgétaire)</div>
+        <div class="source">Document budgétaire 2025</div>
       </div>
     </div>
     <div class="grid-2" style="margin-top: 2rem;">
       <div>
-        <h3>Recettes</h3>
+        <h3>Structure des recettes 2025 (document budgétaire)</h3>
         <table>
           <tr><th>Poste</th><th>Montant</th></tr>
           <tr><td>Recettes internes</td><td class="num"><span class="usd">957 M$</span><br><span class="cdf">2 827 859 584 422 FC</span></td></tr>
-          <tr><td>Rétrocession État (40%)</td><td class="num"><span class="usd">128 M$</span><br><span class="cdf">378 973 886 861 FC</span></td></tr>
+          <tr><td>Rétrocession État central (40 %)</td><td class="num"><span class="usd">128 M$</span><br><span class="cdf">378 973 886 861 FC</span></td></tr>
           <tr><td>Fonds de péréquation</td><td class="num"><span class="usd">22 M$</span><br><span class="cdf">63 756 334 919 FC</span></td></tr>
-          <tr><td><strong>Total recettes</strong></td><td class="num"><span class="usd"><strong>981 M$</strong></span><br><span class="cdf"><strong>2 898 829 755 907 FC</strong></span></td></tr>
+          <tr><td>Total affiché du document</td><td class="num"><span class="usd"><strong>981 M$</strong></span><br><span class="cdf"><strong>2 898 829 755 907 FC</strong></span></td></tr>
         </table>
+        <div class="callout yellow" style="margin-top: 1.5rem;">
+          <div class="title">Note de réconciliation — à traiter avant projection</div>
+          <p>La décomposition du document source ne boucle pas avec son propre total (957 + 128 + 22 = 1 107 M$ vs 981 M$ affichés — écart de 12,8 %). Lecture la plus probable : 981 M$ = total dont rétrocession 40 % (128 M$) et péréquation (22 M$), soit des recettes propres ≈ <b>831 M$</b>. À réconcilier avec la Direction Administrative et Financière de la Province.</p>
+        </div>
       </div>
       <div>
-        <h3>Comparaison provinces 2025</h3>
+        <h3>Comparaison provinces 2025 (compilation du 01/10)</h3>
         <table>
           <tr><th>Province</th><th>Budget</th></tr>
-          <tr><td>Kinshasa</td><td class="num"><span class="usd">1 145 M$</span><br><span class="cdf">3 321 milliards FC</span></td></tr>
-          <tr><td><strong>Lualaba</strong></td><td class="num"><span class="usd"><strong>981 M$</strong></span><br><span class="cdf"><strong>2 898 milliards FC</strong></span></td></tr>
-          <tr><td>Haut-Katanga</td><td class="num"><span class="usd">580 M$</span><br><span class="cdf">1 716 milliards FC</span></td></tr>
-          <tr><td>Kongo Central</td><td class="num"><span class="usd">110 M$</span><br><span class="cdf">323 milliards FC</span></td></tr>
+          <tr><td>Kinshasa</td><td class="num"><span class="usd">~1,1 Mds $</span></td></tr>
+          <tr><td><strong>Lualaba</strong></td><td class="num"><span class="usd"><strong>981 M$</strong></span></td></tr>
+          <tr><td>Kongo Central</td><td class="num"><span class="usd">~323 M$</span><br><span class="cdf">ou ~110 M$ — cf. note</span></td></tr>
         </table>
+        <div class="callout yellow" style="margin-top: 1.5rem;">
+          <div class="title">En attente de re-vérification</div>
+          <p>Budget 2026 compilé : 2 599 Md FC (+15 %) — article à re-crawler avant emploi. Le Kongo Central figure à 323 M$ USD dans notre compilation (≈ 110 M$ si conversion depuis le FC) : les deux lectures existent, trancher sur l'article source avant toute projection.</p>
+        </div>
       </div>
     </div>
     <div class="callout" style="margin-top: 2rem;">
-      <div class="title">Lecture</div>
-      <p>Le Lualaba est la 2ᵉ province la plus riche de RDC après Kinshasa. Le budget 2025 a été réduit de 22 % en raison de la suspension des exportations de cobalt (février 2025) et de la faible mobilisation des recettes internes. Taux de change : 2 954 FC/USD (budget initial), 2 859,2 FC/USD (rectificatif).</p>
+      <div class="title">Lecture — où est l'argent</div>
+      <p>Le Lualaba est la 2ᵉ province la plus riche de RDC après Kinshasa. 981 M$ de budget (rectifié à 789 M$ : −20 % en USD, −22 % en FC, à cause de la suspension des exportations de cobalt en février 2025 et de la faible mobilisation des recettes internes). Taux de change budgétaires : 2 954 FC/USD (initial), 2 859,2 FC/USD (rectificatif). Dernier budget voté disponible : 2025 (le 2026 — 2 599 Md FC, +15 % — est en cours de vérification). <b>C'est le gouvernorat qui exécute ce budget : chaque projet qu'il retient devient un flux accessible aux prestataires structurés.</b></p>
     </div>
   </div>
 </section>
 
-<!-- PRODUCTION MINIÈRE -->
+<!-- 2. L'ASSIETTE MINIÈRE -->
 <section>
   <div class="container">
-    <div class="eyebrow">Production minière</div>
-    <h2>Cuivre & cobalt : <span class="accent">données nationales</span></h2>
-    <div class="grid-3" style="margin-top: 3rem;">
+    <div class="eyebrow">Flux n°2 — d'où vient l'argent</div>
+    <h2>L'assiette <span class="accent">minière</span></h2>
+    <div class="grid-4" style="margin-top: 3rem;">
       <div class="stat-card fade-in">
         <div class="value"><span class="usd">3,3 Mt</span></div>
-        <div class="label">Cuivre RDC 2024 (record)</div>
-        <div class="source">Données nationales</div>
+        <div class="label">Cuivre RDC 2024 (record, +12,6 %)</div>
+        <div class="source">Lobito Corridor 2026</div>
       </div>
       <div class="stat-card fade-in">
         <div class="value"><span class="usd">225 000 t</span></div>
         <div class="label">Cobalt RDC 2024</div>
-        <div class="source">Données nationales</div>
+        <div class="source">Lobito Corridor 2026</div>
       </div>
       <div class="stat-card fade-in">
         <div class="value"><span class="usd">76 %</span></div>
         <div class="label">Cobalt mondial</div>
-        <div class="source">Données nationales</div>
+        <div class="source">Lobito Corridor 2026</div>
       </div>
       <div class="stat-card fade-in">
         <div class="value"><span class="usd">14 %</span></div>
         <div class="label">Cuivre mondial</div>
-        <div class="source">Données nationales</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="value"><span class="usd">437 006 t</span></div>
-        <div class="label">Kamoa-Kakula 2024</div>
-        <div class="source">Ivanhoe Mines</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="value"><span class="usd">1 061</span></div>
-        <div class="label">Opérateurs industriels</div>
-        <div class="source">CTCPM</div>
+        <div class="source">Lobito Corridor 2026</div>
       </div>
     </div>
     <div class="grid-2" style="margin-top: 2rem;">
@@ -288,43 +272,135 @@
           <tr><td>CMOC Kisanfu</td><td class="num">228 107 t</td></tr>
           <tr><td>Kamoto Copper</td><td class="num">188 877 t</td></tr>
         </table>
+        <div class="grid-2" style="gap: 1rem; margin-top: 1.5rem;">
+          <div class="stat-card fade-in" style="padding: 1.25rem;">
+            <div class="value" style="font-size: 1.8rem;"><span class="usd">437 006 t</span></div>
+            <div class="label">Kamoa-Kakula 2024</div>
+            <div class="source">Lobito Corridor (donnée Ivanhoe Mines)</div>
+          </div>
+          <div class="stat-card fade-in" style="padding: 1.25rem;">
+            <div class="value" style="font-size: 1.8rem;"><span class="usd">650 200 t</span></div>
+            <div class="label">CMOC cuivre 2024 + 114 200 t cobalt (41 % du cobalt mondial)</div>
+            <div class="source">Lobito Corridor 2026</div>
+          </div>
+        </div>
       </div>
       <div>
-        <h3>Top exportateurs cobalt 2025 (CTCPM)</h3>
+        <h3>Le tissu à structurer (CTCPM)</h3>
         <table>
-          <tr><th>Société</th><th>Volume</th></tr>
-          <tr><td>CMOC Kisanfu</td><td class="num">19 736 t</td></tr>
-          <tr><td>Kamoto Copper</td><td class="num">8 115 t</td></tr>
-          <tr><td>Tenke Fungurume</td><td class="num">4 263 t</td></tr>
-          <tr><td>Kingamyambo</td><td class="num">3 799 t</td></tr>
-          <tr><td>Mutanda Mining</td><td class="num">1 942 t</td></tr>
+          <tr><th>Indicateur</th><th>Valeur</th></tr>
+          <tr><td>Titres miniers valides</td><td class="num">3 448 (2026)</td></tr>
+          <tr><td>Contrats miniers</td><td class="num">282+ (2026)</td></tr>
+          <tr><td>Entreprises en production</td><td class="num">114+ (2026)</td></tr>
+          <tr><td>Opérateurs industriels</td><td class="num">1 061 (2025)</td></tr>
+          <tr><td>Opérateurs artisanaux</td><td class="num">1 001 (2025)</td></tr>
+          <tr><td>Entreprises périmètre ITIE</td><td class="num">107 (2025)</td></tr>
+        </table>
+        <h3 style="margin-top: 1.5rem;">Les cours (CTCPM — widget DailyMetalPrice)</h3>
+        <table>
+          <tr><th>Métal</th><th>Cours</th><th>Var.</th></tr>
+          <tr><td>Cathode de cuivre</td><td class="num"><span class="usd">12 498,35 USD/t</span></td><td class="num">−5,67 %</td></tr>
+          <tr><td>Cobalt métal</td><td class="num"><span class="usd">55 603,75 USD/t</span></td><td class="num">−7,82 %</td></tr>
         </table>
       </div>
     </div>
-    <div class="callout" style="margin-top: 2rem;">
-      <div class="title">Lecture</div>
-      <p>Le Lualaba produit la majorité du cuivre et du cobalt de la RDC. Kamoa-Kakula est la plus grande mine de cuivre d'Afrique. La province est le cœur minier du pays. Les chiffres de production nationale sont cohérents entre les sources et avec les données publiques.</p>
+    <div class="callout green" style="margin-top: 2rem;">
+      <div class="title">Lecture — pourquoi la porte est ouverte</div>
+      <p>Les deux minerais de la province sont en baisse et le cobalt a subi une suspension d'exportations (fév.–oct. 2025) : la province cherche à diversifier et à structurer. <b>2 062 opérateurs (1 061 industriels + 1 001 artisanaux) forment une assiette économique réelle à tracer, formaliser et servir</b> — et le budget provincial repose sur 957 M$ de recettes internes (chiffre du document budgétaire, cf. note de réconciliation) qu'il faut renforcer.</p>
     </div>
   </div>
 </section>
 
-<!-- INFRASTRUCTURES -->
+<!-- 3. L'ARGENT EXTÉRIEUR — LE CORRIDOR -->
 <section class="alt">
   <div class="container">
-    <div class="eyebrow">Infrastructures</div>
-    <h2>Le hub qui <span class="accent">se construit</span></h2>
-    <div class="grid-2" style="margin-top: 3rem;">
+    <div class="eyebrow">Flux n°3 — l'argent extérieur engagé</div>
+    <h2>Le corridor de Lobito : <span class="accent">l'objectif 6 Mds $</span></h2>
+    <p class="lead" style="margin-bottom: 2rem;">Le corridor Benguela (CFB, 1 866 km — dont 1 289 km en Angola et ~450 km en RDC (Dilolo–Kolwezi), hors segment frontalier) est la plus grosse poche d'argent extérieur qui touche le Lualaba. Concession 30 ans attribuée le 04/11/2022 à Lobito Atlantic Railway (Trafigura 49,5 % · Mota-Engil 49,5 % · Vecturis 1 %), transfert effectif le 04/07/2023, opérations depuis le 25/01/2024. Objectif d'investissement total visé : 6 Mds $ (Atlantic Council) — la table ci-dessous liste les engagements annoncés, y compris concurrents (TAZARA), demandes en attente (Banque mondiale) et lignes hors RDC (BAD Zambie).</p>
+    <div class="grid-3">
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">753 M$</span></div>
+        <div class="label">Closing financier 17/12/2025 (553 DFC + 200 DBSA)</div>
+        <div class="source">Trafigura</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">555 M$</span></div>
+        <div class="label">Déjà engagés sur le corridor (455 Angola + 100 RDC)</div>
+        <div class="source">OECD, avril 2025</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="value"><span class="usd">4,6 Mt/an</span></div>
+        <div class="label">Capacité cible (0,4 Mt/an fin 2024 — ~9 % de la cible)</div>
+        <div class="source">DFC</div>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top: 2rem;">
       <div>
-        <h3>Infrastructures existantes</h3>
+        <h3>La demande garantie du corridor</h3>
+        <table>
+          <tr><th>Engagement de transport</th><th>Volume</th></tr>
+          <tr><td>KoBold (lithium, Manono)</td><td class="num">300 000+ t/an</td></tr>
+          <tr><td>First Quantum / Kobaloni</td><td class="num">170 000 t/an</td></tr>
+          <tr><td>Ivanhoe Mines (Kamoa-Kakula)</td><td class="num">120 000–240 000 t/an</td></tr>
+          <tr><td><strong>Total engagements</strong></td><td class="num"><strong>~590 000–710 000 t/an</strong></td></tr>
+        </table>
+        <h3 style="margin-top: 1.5rem;">Ce qui prouve que ça roule</h3>
+        <div class="timeline" style="margin-top: 1rem;">
+          <div class="timeline-item"><div class="date">05/03/2018</div><div class="event">Reprise du transport de minerai Tenke Fungurume → Lobito</div></div>
+          <div class="timeline-item"><div class="date">déc. 2023</div><div class="event">Premier train de concentré de cuivre RDC</div></div>
+          <div class="timeline-item"><div class="date">12/07/2024</div><div class="event">1ᵉʳ navire au terminal minier de Lobito (MV Lindsaylou)</div></div>
+          <div class="timeline-item"><div class="date">août 2024</div><div class="event">Premier envoi de cuivre RDC → USA par le corridor</div></div>
+          <div class="timeline-item"><div class="date">févr. 2026</div><div class="event">Anodes bas-carbone Kamoa-Kakula vers l'Europe · 1ʳᵉ livraison EGC + Trafigura via LAR</div></div>
+        </div>
+      </div>
+      <div>
+        <h3>Le goulot — la section RDC (l'argent qui reste à dépenser)</h3>
         <table>
           <tr><th>Élément</th><th>Détail</th></tr>
-          <tr><td>Aéroport de Kolwezi (FZQM)</td><td>Piste 2 410 m, altitude 1 526 m</td></tr>
-          <tr><td>Terminal international</td><td>Inauguré le 11/06/2025</td></tr>
-          <tr><td>Compagnies aériennes</td><td>Air Congo → Kinshasa · CAA → Lubumbashi</td></tr>
-          <tr><td>Gouverneure</td><td>Marie-Thérèse Fifi Masuka</td></tr>
-          <tr><td>Vice-Gouverneur</td><td>Clément Mufundji Tshinat</td></tr>
+          <tr><td>Section Dilolo–Kolwezi</td><td>~450 km — vitesse actuelle 10–15 km/h, &lt; 5 % de capacité</td></tr>
+          <tr><td>Réhabilitation estimée</td><td class="num"><span class="usd">410 M$+</span></td></tr>
+          <tr><td>Concession Dilolo–Sakania</td><td>1 004,5 km · 30 ans · Mota-Engil</td></tr>
+          <tr><td>Investissement concession</td><td class="num"><span class="usd">1,258 Mds $</span></td></tr>
+          <tr><td>Intérêt DFC (Mota-Engil)</td><td class="num"><span class="usd">jusqu'à 1 Mds $</span></td></tr>
+          <tr><td>Demande RDC à la Banque mondiale</td><td class="num"><span class="usd">500 M$</span> (oct. 2025)</td></tr>
         </table>
+        <div class="callout" style="margin-top: 1.5rem;">
+          <div class="title">Lecture — où l'argent extérieur se prend</div>
+          <p>L'Angola est réhabilité ; la section RDC — celle qui arrive à Kolwezi — est le goulot en cours de réhabilitation. <b>Tout ce qui gravite autour de cette section (services, logistique, équipements, études) est un flux de dépense à capter</b>, sans se mettre en concurrence avec le concessionnaire.</p>
+        </div>
       </div>
+    </div>
+    <h3 style="margin-top: 3rem;">Qui met quoi — la table complète des bailleurs</h3>
+    <table style="margin-top: 1rem;">
+      <tr><th>Bailleur</th><th>Montant</th><th>Objet</th><th>Date</th></tr>
+      <tr><td>DFC (USA)</td><td class="num"><span class="usd">553 M$</span></td><td>Lobito Atlantic Railway</td><td>17/12/2025</td></tr>
+      <tr><td>DBSA (Afrique du Sud)</td><td class="num"><span class="usd">200 M$</span></td><td>LAR (avec DFC)</td><td>17/12/2025</td></tr>
+      <tr><td>DFC (USA)</td><td class="num"><span class="usd">250 M$</span></td><td>→ AFC pour le corridor</td><td>08/02/2024</td></tr>
+      <tr><td>DFC (USA)</td><td class="num"><span class="usd">jusqu'à 1 Mds $</span></td><td>→ Mota-Engil (section RDC)</td><td>2025</td></tr>
+      <tr><td>DFC (USA)</td><td class="num"><span class="usd">150 M$</span></td><td>→ Kamoa-Kakula</td><td>2024</td></tr>
+      <tr><td>DFC (USA)</td><td class="num"><span class="usd">40 M$</span></td><td>→ Africa GreenCo (énergie)</td><td>04/12/2024</td></tr>
+      <tr><td>DFC (USA)</td><td class="num"><span class="usd">jusqu'à 150 M$</span></td><td>Assurance risque politique — eau (Angola du Sud)</td><td>04/12/2024</td></tr>
+      <tr><td>Banque mondiale</td><td class="num"><span class="usd">500 M$ (demandé)</span></td><td>Accélération corridor côté RDC</td><td>oct. 2025</td></tr>
+      <tr><td>UE / Global Gateway</td><td class="num"><span class="usd">2 Mds €+</span></td><td>Corridor (dont 116 M€)</td><td>2023–2026</td></tr>
+      <tr><td>BAD</td><td class="num"><span class="usd">500 M$ + 1,6 Mds $ levés</span></td><td>Programme corridor multinational</td><td>27/10/2023</td></tr>
+      <tr><td>BAD</td><td class="num"><span class="usd">255 M$ + 10 M$</span></td><td>→ Zambie (lobe Est)</td><td>06/08/2026</td></tr>
+      <tr><td>Italie (Plan Mattei)</td><td class="num"><span class="usd">~300–320 M$</span></td><td>Via CDP/SACE</td><td>2024–2025</td></tr>
+      <tr><td>Chine</td><td class="num"><span class="usd">2 Mds $</span></td><td>Reconstruction CFB (prêt)</td><td>—</td></tr>
+      <tr><td>Chine (TAZARA)</td><td class="num"><span class="usd">1,4 Mds $</span></td><td>Modernisation TAZARA (concurrent)</td><td>nov. 2025</td></tr>
+    </table>
+    <div class="callout green" style="margin-top: 2rem;">
+      <div class="title">L'accord USA-RDC — la demande garantie</div>
+      <p>Accord de partenariat stratégique constitué le 22/12/2025 : objectif de 50 % des exportations de cuivre et 30 % du cobalt de la RDC via le corridor en 5 ans (source : Discovery Alert, source unique). <b>Les USA n'aident pas le corridor — ils achètent une part du débouché. La demande est garantie par un État, pas par une promesse.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. L'ARGENT EN CHANTIER + L'ÉCONOMIE -->
+<section>
+  <div class="container">
+    <div class="eyebrow">Flux n°4 — l'argent déjà en dépense</div>
+    <h2>Les chantiers du <span class="accent">gouvernorat</span></h2>
+    <div class="grid-2" style="margin-top: 3rem;">
       <div>
         <h3>Chantiers en cours (ACP, juin 2025)</h3>
         <table>
@@ -334,136 +410,191 @@
           <tr><td>Clinique moderne Mwangeji</td><td>En cours</td></tr>
           <tr><td>Bâtiment directions provinciales</td><td>En cours</td></tr>
         </table>
+        <h3 style="margin-top: 1.5rem;">Les infrastructures qui font venir l'argent</h3>
+        <table>
+          <tr><th>Élément</th><th>Détail</th></tr>
+          <tr><td>Aéroport de Kolwezi (FZQM)</td><td>Piste 2 410 m, altitude 1 526 m</td></tr>
+          <tr><td>Terminal international</td><td>Inauguré le 11/06/2025</td></tr>
+          <tr><td>Compagnies</td><td>Air Congo → Kinshasa · CAA → Lubumbashi</td></tr>
+          <tr><td>Gouverneure</td><td>Fifi Masuka (depuis le 13/07/2024) — à ne pas confondre avec le Ministre Jeffrey MASUKA SAINI</td></tr>
+          <tr><td>Province</td><td>121 308 km² · ~3,18 M hab. (2020) · 5 territoires</td></tr>
+          <tr><td>Signal international</td><td>Mining Indaba 2026 : « hub stratégique minier, énergétique et logistique africain » · KBM 7ᵉ édition à Kolwezi (20–22 mai 2026) · EGC + Mercuria « laboratoire du cobalt responsable » à Kasulo · 1 000 premières tonnes de cobalt artisanal traçable (nov. 2025)</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>L'économie qui porte ces flux</h3>
+        <table>
+          <tr><th>Indicateur</th><th>Valeur</th><th>Année</th></tr>
+          <tr><td>Croissance PIB réel RDC</td><td class="num"><span class="usd">5,5 %</span></td><td>2025 (est.)</td></tr>
+          <tr><td>Croissance secteur minier</td><td class="num"><span class="usd">10,1 %</span></td><td>2025</td></tr>
+          <tr><td>Croissance secteur non minier</td><td class="num"><span class="usd">3,1 %</span></td><td>2025</td></tr>
+          <tr><td>Projection 2026–2028</td><td class="num"><span class="usd">5,1 %</span> moy.</td><td>2026–2028</td></tr>
+          <tr><td>Inflation</td><td class="num"><span class="usd">7,5 %</span></td><td>2025</td></tr>
+        </table>
+        <h3 style="margin-top: 1.5rem;">Le change et les taux (BCC, sept. 2026)</h3>
+        <table>
+          <tr><th>Indicateur</th><th>Valeur</th></tr>
+          <tr><td>USD/CDF</td><td class="num">2 267,80</td></tr>
+          <tr><td>EUR/CDF</td><td class="num">2 573,81</td></tr>
+          <tr><td>Inflation glissement annuel</td><td class="num">3,436 %</td></tr>
+          <tr><td>Taux directeur</td><td class="num">12,50 %</td></tr>
+        </table>
+        <div class="callout" style="margin-top: 1.5rem;">
+          <div class="title">Lecture</div>
+          <p>Le gouvernorat exécute déjà (aérogare, échangeur, clinique, bâtiments administratifs) et l'économie minière croît à deux chiffres. <b>Les chantiers provinciaux prouvent que l'argent circule vers des prestataires — la question est d'être structuré pour entrer dans la file.</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. LES PORTES D'ENTRÉE -->
+<section class="alt">
+  <div class="container">
+    <div class="eyebrow">Capter — les portes d'entrée</div>
+    <h2>Où REM CORP <span class="accent">prend sa part</span></h2>
+    <p class="lead" style="margin-bottom: 2rem;">Quatre portes ouvertes par la lettre d'intention du 18/08/2026 — et le courrier du Ministre du 28/08/2026 confirme l'examen de notre proposition. Pour chaque porte : la source d'argent et le mécanisme de captation.</p>
+    <div class="grid-2">
+      <div class="opp-card fade-in">
+        <div class="icon">🛣️</div>
+        <div class="title">Porte 1 — Signalisation routière</div>
+        <div class="desc"><b>La source d'argent :</b> programmes nationaux et budget provincial (infrastructures). Point de données réel : la route <b>Kolwezi–Sakabinda, 159 M$ (~53,6 km)</b>, lancée en 2024 dans le programme national des projets (Bankable.africa · Actualite.cd · Primature.gov.cd — date de lancement à trancher entre les sources avant projection). L'argent routier coule déjà dans la province. Ordre de grandeur évoqué en interne pour la signalisation ≈ 13 M — unité à confirmer avec le Ministère.<br><b>Le mécanisme :</b> mandat de structuration complète — cahier des charges, montage, mise en concurrence, suivi d'exécution. Honoraires par phase + suivi.<br><b>Pourquoi c'est crédible :</b> demande explicite de la lettre du 18/08 ; l'État central exécute la route à 159 M$ et le gouvernorat exécute échangeur, clinique, bâtiments.</div>
+        <div class="potential">Cash : rapide — honoraires de phase</div>
+      </div>
+      <div class="opp-card fade-in">
+        <div class="icon">💧</div>
+        <div class="title">Porte 2 — Adduction en eau potable</div>
+        <div class="desc"><b>La source d'argent :</b> les bailleurs du secteur eau en RDC (BAD, Banque mondiale, UE). Signal régional : le DFC a couvert un projet d'eau dans le sud de l'Angola (jusqu'à 150 M$ d'assurance risque politique, 04/12/2024) — un engagement angolais, pas sur la province, mais qui prouve l'appétit du bailleur pour l'eau dans la région.<br><b>Le mécanisme :</b> ingénierie financière — identifier la source, structurer le dossier, introduire au bailleur. Honoraires + success fee au closing.<br><b>Pourquoi c'est crédible :</b> demande explicite de la lettre du 18/08 (zones urbaines et périurbaines de Kolwezi).</div>
+        <div class="potential">Cash : au closing — success fee</div>
+      </div>
+      <div class="opp-card fade-in">
+        <div class="icon">🏨</div>
+        <div class="title">Porte 3 — Projets hôteliers</div>
+        <div class="desc"><b>La source d'argent :</b> investisseurs privés attirés par les flux miniers et événementiels (KBM 2026 à Kolwezi, terminal international inauguré 06/2025, Mining Indaba 2026).<br><b>Le mécanisme :</b> montage financier, partenariats investisseurs, structuration juridique. Honoraires + participation selon structure.<br><b>Pourquoi c'est crédible :</b> demande explicite de la lettre du 18/08 ; le positionnement « hub » de la province est porté par ses propres autorités.</div>
+        <div class="potential">Cash : mixte — honoraires + participation</div>
+      </div>
+      <div class="opp-card fade-in">
+        <div class="icon">🏭</div>
+        <div class="title">Porte 4 — Portefeuille provincial (hub industriel)</div>
+        <div class="desc"><b>La source d'argent :</b> l'ensemble des flux — budget provincial 981 M$, bailleurs corridor (objectif visé 6 Mds $), secteur privé.<br><b>Le mécanisme :</b> mandat récurrent d'agrégation — identifier, prioriser, structurer les projets prioritaires de la Province. Rémunération de mandat + fees par projet.<br><b>Pourquoi c'est crédible :</b> le courrier du 28/08/2026 annonce un examen approfondi de notre proposition et vise des projets à fort impact économique et social — la porte institutionnelle est ouverte.</div>
+        <div class="potential">Cash : récurrent — le mandat</div>
+      </div>
+    </div>
+    <h3 style="margin-top: 3rem;">Les portes dérivées — le même marché, l'assiette sourcée</h3>
+    <div class="grid-4" style="margin-top: 1.5rem;">
+      <div class="opp-card fade-in" style="padding: 1.5rem;">
+        <div class="title" style="font-size: 1.05rem;">Numérisation des recettes</div>
+        <div class="desc" style="font-size: 0.8rem;">957 M$ de recettes internes à renforcer (cf. note de réconciliation) ; 2 062 opérateurs à tracer. Le gouvernorat a un intérêt direct : mieux tracer = mieux percevoir.</div>
+      </div>
+      <div class="opp-card fade-in" style="padding: 1.5rem;">
+        <div class="title" style="font-size: 1.05rem;">Services aux opérateurs miniers</div>
+        <div class="desc" style="font-size: 0.8rem;">3 448 titres miniers valides, 282+ contrats, 114+ entreprises en production : conformité, formalisation, accompagnement administratif.</div>
+      </div>
+      <div class="opp-card fade-in" style="padding: 1.5rem;">
+        <div class="title" style="font-size: 1.05rem;">Logistique du corridor</div>
+        <div class="desc" style="font-size: 0.8rem;">590 000–710 000 t/an d'engagements de transport ; le goulot Dilolo–Kolwezi en réhabilitation (410 M$+, concession 1,258 Mds $) : services autour, jamais contre le concessionnaire.</div>
+      </div>
+      <div class="opp-card fade-in" style="padding: 1.5rem;">
+        <div class="title" style="font-size: 1.05rem;">Transformation locale & énergie</div>
+        <div class="desc" style="font-size: 0.8rem;">Politique d'export de produits transformés (anodes Kamoa févr. 2026) ; croissance minière +10,1 % ; DFC 40 M$ sur l'énergie (Africa GreenCo).</div>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top: 2rem;">
+      <div class="position-card fade-in">
+        <div class="role">Montage 1</div>
+        <div class="title">Honoraires de structuration</div>
+        <div class="desc">Facturés par phase : diagnostic, montage, mise en concurrence, suivi. Risque faible, cash rapide.</div>
+      </div>
+      <div class="position-card fade-in">
+        <div class="role">Montage 2</div>
+        <div class="title">Success fee au closing</div>
+        <div class="desc">Payée quand le financement se débloque. Alignée sur le résultat — l'interface bailleurs est le métier.</div>
+      </div>
+      <div class="position-card fade-in">
+        <div class="role">Montage 3</div>
+        <div class="title">Mandat d'agrégation récurrent</div>
+        <div class="desc">Le portefeuille provincial : un revenu continu de structuration, projet après projet.</div>
+      </div>
+    </div>
+    <div class="callout yellow" style="margin-top: 2rem;">
+      <div class="title">À sonder en rencontre — jamais écrit</div>
+      <p>Transition en hub industriel (portée par le Ministère lui-même) · sécurité / prisons / construction · montage 70/30 + collatéraux : hypothèse de structure d'un montage d'infrastructure — dette senior auprès des bailleurs (type DFC + DBSA sur le rail) / fonds propres de l'opérateur / engagements de transport en collatéral — à confirmer en rencontre, jamais écrit au Ministère.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. LA PORTE INSTITUTIONNELLE — LE COURRIER DU 28/08 -->
+<section>
+  <div class="container">
+    <div class="eyebrow">La porte institutionnelle</div>
+    <h2>Le courrier du <span class="accent">28/08/2026</span></h2>
+    <p class="lead" style="margin-bottom: 2rem;">Le Ministère a accusé réception de notre lettre d'intention du 18/08/2026 — réf. <b>N° CAB/MIN/TVCEIHT/LBA/0434/2026</b>, copie transmise à Son Excellence Madame le Gouverneur. Examen technique et administratif approfondi annoncé. <b>C'est l'ouverture officielle : il demande 6 éléments, « dans les meilleurs délais ».</b></p>
+    <div class="grid-2">
+      <div>
+        <h3>Chronologie du dossier</h3>
+        <div class="timeline" style="margin-top: 1.5rem;">
+          <div class="timeline-item"><div class="date">22/06/2026</div><div class="event">Lettre d'intention REM CORP — REM/MB/PROVL/2206/2026</div></div>
+          <div class="timeline-item"><div class="date">26/06/2026</div><div class="event">Envoi au Ministère</div></div>
+          <div class="timeline-item"><div class="date">27/07/2026</div><div class="event">Validation annoncée par le canal cabinet (date à confirmer — le PDF signé est daté du 18/08)</div></div>
+          <div class="timeline-item"><div class="date">18/08/2026</div><div class="event">Lettre d'intention signée — REM/MB/PROVL/18/08/2026-1 · 4 projets</div></div>
+          <div class="timeline-item"><div class="date">28/08/2026</div><div class="event">Accusé de réception du Ministre — N° CAB/MIN/TVCEIHT/LBA/0434/2026 · copie au Gouverneur</div></div>
+          <div class="timeline-item"><div class="date">02/10/2026</div><div class="event">Dossier de réponse REM CORP préparé — en validation interne · audience à solliciter</div></div>
+        </div>
+      </div>
+      <div>
+        <h3>Les 6 éléments demandés par le Ministère</h3>
+        <table style="margin-top: 1.5rem;">
+          <tr><th>#</th><th>Demande (courrier du 28/08/2026)</th></tr>
+          <tr><td>1</td><td>Présentation institutionnelle et références de REM CORP SARL</td></tr>
+          <tr><td>2</td><td>Domaines d'intervention et expériences pertinentes</td></tr>
+          <tr><td>3</td><td>Références de projets similaires réalisés ou en cours</td></tr>
+          <tr><td>4</td><td>Modalités de financement envisagées + identité des éventuels partenaires financiers et techniques</td></tr>
+          <tr><td>5</td><td>Propositions sur le schéma juridique et institutionnel du partenariat</td></tr>
+          <tr><td>6</td><td>Informations sur la capacité technique, financière et organisationnelle</td></tr>
+        </table>
+        <div class="callout yellow" style="margin-top: 1.5rem;">
+          <div class="title">Le garde-fou du Ministère</div>
+          <p>L'accusé de réception ne vaut ni approbation des projets, ni engagement contractuel ou financier. Une prise en compte de la manifestation d'intérêt — c'est la même prudence que la nôtre.</p>
+        </div>
       </div>
     </div>
     <div class="grid-2" style="margin-top: 2rem;">
-      <div>
-        <h3>6 territoires de la province</h3>
-        <table>
-          <tr><th>Territoire</th><th>Superficie</th><th>Population</th></tr>
-          <tr><td>Kolwezi</td><td>213 km²</td><td>572 942</td></tr>
-          <tr><td>Lubudi</td><td>14 860 km²</td><td>331 919</td></tr>
-          <tr><td>Mutshatsha</td><td>18 859 km²</td><td>217 908</td></tr>
-          <tr><td>Sandoa</td><td>25 337 km²</td><td>387 435</td></tr>
-          <tr><td>Dilolo</td><td>24 963 km²</td><td>380 136</td></tr>
-          <tr><td>Kapanga</td><td>24 700 km²</td><td>~100 000</td></tr>
-        </table>
+      <div class="courrier-card">
+        <div class="ref">La réponse REM CORP — volet 1</div>
+        <div class="title">À remettre dès validation (points 1-2-3-6)</div>
+        <div class="desc">Présentation institutionnelle, domaines d'intervention (les 4 de notre lettre), références documentées de la société, et attestations réglementaires : RCCM, attestation fiscale, numéro d'impôt, identification nationale. Le détail vit dans le dossier de transmission.</div>
       </div>
-      <div>
-        <h3>Positionnement stratégique</h3>
-        <table>
-          <tr><th>Élément</th><th>Détail</th></tr>
-          <tr><td>Mining Indaba 2026</td><td>« Hub stratégique minier, énergétique et logistique africain »</td></tr>
-          <tr><td>EGC + Mercuria</td><td>« Laboratoire du cobalt responsable » à Kasulo (mars 2026)</td></tr>
-          <tr><td>Cobalt artisanal traçable</td><td>1 000 premières tonnes (nov. 2025)</td></tr>
-          <tr><td>KBM 2026</td><td>7ᵉ Katanga Business Meeting, 20–22 mai 2026</td></tr>
-        </table>
+      <div class="courrier-card">
+        <div class="ref">La réponse REM CORP — volet 2</div>
+        <div class="title">À tenir pour la rencontre (points 4-5)</div>
+        <div class="desc">Modalités de financement, identité des partenaires, schéma juridique : montages arrêtés selon les projets prioritaires que la Province identifiera — convention de partenariat ou PPP, dans le cadre de la réglementation en vigueur. <b>Une audience à Kolwezi est sollicitée.</b></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FINANCEMENTS -->
-<section>
-  <div class="container">
-    <div class="eyebrow">Financements</div>
-    <h2>Qui met <span class="accent">quoi</span></h2>
-    <div class="grid-3" style="margin-top: 3rem;">
-      <div class="stat-card fade-in">
-        <div class="value"><span class="usd">553 M$</span></div>
-        <div class="label">DFC → LAR</div>
-        <div class="source">17/12/2025</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="value"><span class="usd">200 M$</span></div>
-        <div class="label">DBSA</div>
-        <div class="source">17/12/2025</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="value"><span class="usd">250 M$</span></div>
-        <div class="label">DFC → AFC</div>
-        <div class="source">08/02/2024</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="value"><span class="usd">1 Mds $</span></div>
-        <div class="label">DFC → Mota-Engil</div>
-        <div class="source">2025</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="value"><span class="usd">150 M$</span></div>
-        <div class="label">DFC → Kamoa-Kakula</div>
-        <div class="source">2024</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="value"><span class="usd">40 M$</span></div>
-        <div class="label">DFC → Africa GreenCo</div>
-        <div class="source">04/12/2024</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="value"><span class="usd">2 Mds €</span></div>
-        <div class="label">UE / Global Gateway</div>
-        <div class="source">2023–2026</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="value"><span class="usd">500 M$</span></div>
-        <div class="label">BAD</div>
-        <div class="source">27/10/2023</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="value"><span class="usd">300–320 M$</span></div>
-        <div class="label">Italie (Plan Mattei)</div>
-        <div class="source">2024–2025</div>
-      </div>
-    </div>
-    <div class="callout green" style="margin-top: 2rem;">
-      <div class="title">Total identifié : 6 Mds $</div>
-      <p>Les USA ne « soutiennent » pas le corridor — ils achètent une part du débouché. C'est une demande garantie, pas une subvention. Accord USA-RDC (22/12/2025) : 50 % du cuivre et 30 % du cobalt RDC via le corridor (5 ans).</p>
-    </div>
-  </div>
-</section>
-
-<!-- PROJETS IDENTIFIÉS -->
+<!-- 7. LES RISQUES -->
 <section class="alt">
   <div class="container">
-    <div class="eyebrow">Projets identifiés</div>
-    <h2>Projets et <span class="accent">financements</span></h2>
-    <div class="grid-3" style="margin-top: 3rem;">
-      <div class="opp-card fade-in">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg>
-        <div class="title">Corridor de Lobito</div>
-        <div class="desc">Chemin de fer de Benguela, 1 866 km, terminus Est à Kolwezi. Financement : 6 Mds $ identifiés (DFC, DBSA, BAD, UE).</div>
-        <div class="potential">Potentiel : élevé — infrastructure</div>
+    <div class="eyebrow">Ce qui peut bloquer</div>
+    <h2>Les risques, <span class="accent">dits franchement</span></h2>
+    <div class="grid-2" style="margin-top: 3rem;">
+      <div>
+        <div class="risk-item"><div class="level critical">Bloquant</div><div class="content"><div class="title">La section RDC du corridor n'est pas réhabilitée</div><div class="desc">10–15 km/h, &lt; 5 % de capacité sur Dilolo–Kolwezi. Tout dépend de la mise en œuvre de la concession Mota-Engil (1,258 Mds $, 30 ans). Ne jamais promettre de délai sur cette section.</div></div></div>
+        <div class="risk-item"><div class="level high">Élevé</div><div class="content"><div class="title">Capacité réelle vs promesse</div><div class="desc">0,4 Mt/an fin 2024 pour une cible de 4,6 Mt/an — ~9 % de la cible. Le corridor est réel mais en montée, pas achevé.</div></div></div>
+        <div class="risk-item"><div class="level high">Élevé</div><div class="content"><div class="title">Concurrence des corridors</div><div class="desc">Chine : 2 Mds $ pour la CFB + 1,4 Mds $ TAZARA (nov. 2025). Durban reste dominant : 31,4 Mt/an, expansion de 7 Mds $. Le Lobito doit faire ses preuves en volume.</div></div></div>
+        <div class="risk-item"><div class="level high">Élevé</div><div class="content"><div class="title">Le budget a été révisé à la baisse</div><div class="desc">981 → 789 M$ (−20 % en USD, −22 % en FC) : suspension des exportations de cobalt (fév. 2025) et faible mobilisation des recettes internes. L'argent provincial existe mais n'est pas illimité — viser les flux bailleurs.</div></div></div>
       </div>
-      <div class="opp-card fade-in">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        <div class="title">Transformation locale</div>
-        <div class="desc">Raffinerie de cuivre, traitement de cobalt, production de cathodes. La RDC veut exporter des produits transformés, pas des concentrés.</div>
-        <div class="potential">Potentiel : élevé — politique</div>
+      <div>
+        <div class="risk-item"><div class="level medium">Moyen</div><div class="content"><div class="title">Gel de l'aide USA (fév. 2025)</div><div class="desc">Bloomberg (19/02/2025) : le gel menaçait le projet. L'accord stratégique de décembre 2025 consolide l'engagement américain (appréciation REM CORP) — surveiller l'actualité budgétaire US.</div></div></div>
+        <div class="risk-item"><div class="level medium">Moyen</div><div class="content"><div class="title">Aléas physiques</div><div class="desc">Inondations en Angola (avril 2026) : corridor fermé temporairement. Tout montage inclut une clause d'aléa.</div></div></div>
+        <div class="risk-item"><div class="level medium">Moyen</div><div class="content"><div class="title">Cobalt artisanal</div><div class="desc">~30 % de la production, 150 000–200 000 mineurs. Risque réputationnel pour tout projet touchant la filière — et opportunité de formalisation.</div></div></div>
+        <div class="risk-item"><div class="level medium">Moyen</div><div class="content"><div class="title">Gouvernance</div><div class="desc">NRGI qualifie la gouvernance nationale des ressources de faible et opaque. Se protéger : NDA, KYC, montages documentés, aucun engagement par écrit avant les projets identifiés.</div></div></div>
       </div>
-      <div class="opp-card fade-in">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        <div class="title">Logistique & corridors</div>
-        <div class="desc">Corridors routiers, ports secs, signalisation. Le projet de signalisation est dans la lettre du 18/08/2026.</div>
-        <div class="potential">Potentiel : immédiat</div>
-      </div>
-      <div class="opp-card fade-in">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        <div class="title">Numérisation administrative</div>
-        <div class="desc">Transformation numérique des administrations, gestion électronique, sécurisation des données. Projet 2 de la lettre.</div>
-        <div class="potential">Potentiel : prouvé (CNSS, docaposte)</div>
-      </div>
-      <div class="opp-card fade-in">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="22" x2="9" y2="18"/><line x1="15" y1="22" x2="15" y2="18"/><line x1="9" y1="6" x2="10" y2="6"/><line x1="14" y1="6" x2="15" y2="6"/><line x1="9" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="15" y2="10"/><line x1="9" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="15" y2="14"/></svg>
-        <div class="title">Construction & équipements</div>
-        <div class="desc">Infrastructures publiques, hôtels, équipements. Projets 1 et 3 de la lettre (signalisation, hôtels).</div>
-        <div class="potential">Potentiel : moyen</div>
-      </div>
-      <div class="opp-card fade-in">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        <div class="title">Mobilisation des recettes</div>
-        <div class="desc">Contrôle, traçabilité et gestion des recettes publiques. Projet 4 de la lettre.</div>
-        <div class="potential">Potentiel : moyen</div>
-      </div>
+    </div>
+    <div class="callout" style="margin-top: 2rem;">
+      <div class="title">Ce que REM CORP ne fait pas — la crédibilité</div>
+      <p>Ne finance pas sur fonds propres — structure et mobilise · ne concurrence pas Mota-Engil sur le rail — accompagne autour de la concession · ne promet aucun délai d'exécution dépendant d'un tiers · ne nomme aucun partenaire financier par écrit avant les projets identifiés et un NDA.</p>
     </div>
   </div>
 </section>
@@ -473,23 +604,34 @@
   <div class="container">
     <div class="eyebrow">Sources</div>
     <h2>Données <span class="accent">vérifiées</span></h2>
-    <p class="lead" style="margin-bottom: 2rem;">Toutes les données de ce rapport ont été vérifiées par revue contradictoire.</p>
+    <p class="lead" style="margin-bottom: 2rem;">Les données principales de ce rapport sont sourcées en ligne et ont été relues par revue contradictoire. Les chiffres en attente de re-vérification sont explicitement marqués dans le corps du rapport.</p>
     <div class="source-list">
-      <div>Budget 2025 initial : 981 M$ (MagLeTemps + Finances-Entreprises)</div>
-      <div>Budget 2025 rectificatif : 789 M$ (MagLeTemps)</div>
-      <div>Budget Kinshasa 2025 : 1 145 M$ (Finances-Entreprises)</div>
-      <div>Budget Haut-Katanga 2025 : 580 M$ (Finances-Entreprises)</div>
-      <div>Production cuivre RDC 2024 : 3,3 Mt (données nationales)</div>
-      <div>Production cobalt RDC : 225 000 t (données nationales)</div>
-      <div>Part mondiale cobalt : >75 % (données nationales)</div>
-      <div>Kamoa-Kakula 2024 : 437 006 t (Ivanhoe Mines)</div>
-      <div>Contrats miniers : 282+ (CTCPM)</div>
-      <div>Opérateurs industriels : 1 061 (CTCPM)</div>
-      <div>Gouverneure : Marie-Thérèse Fifi Masuka (MagLeTemps + ACP)</div>
-      <div>Corridor de Lobito : terminus Est à Kolwezi (Makanisi + Wikipédia)</div>
-      <div>Top exportateurs 2025 (CTCPM)</div>
-      <div>Chantiers en cours (ACP, juin 2025)</div>
-      <div>6 territoires (Lualaba Investment Holding)</div>
+      <div>Budget 2025 initial : 981 M$ (MagLeTemps) · rectificatif 789 M$ (MagLeTemps)</div>
+      <div>Structure des recettes (document budgétaire provincial — décomposition à réconcilier, cf. note)</div>
+      <div>Comparaison provinces (compilation du 01/10 — en attente de re-crawl)</div>
+      <div>Production cuivre RDC 2024 : 3,3 Mt ; cobalt : ~225 000 t (Lobito Corridor 2026)</div>
+      <div>Kamoa-Kakula 2024 : 437 006 t (Lobito Corridor, donnée Ivanhoe Mines)</div>
+      <div>CMOC 2024 : 650 200 t cuivre / 114 200 t cobalt (Lobito Corridor 2026)</div>
+      <div>Top exportateurs 2025 (CTCPM — site www.ctcpm.cd)</div>
+      <div>Titres miniers 3 448, contrats 282+, entreprises 114+, opérateurs 1 061 + 1 001, ITIE 107 (CTCPM)</div>
+      <div>Cours métaux (widget DailyMetalPrice sur le site CTCPM)</div>
+      <div>Croissance, inflation (Banque mondiale) · change et taux directeur (BCC, sept. 2026)</div>
+      <div>Corridor : structure, concession, engagements (Lobito Corridor · Trafigura · Engineering News · OECD)</div>
+      <div>Financement 753 M$ closing 17/12/2025 (Trafigura · DFC)</div>
+      <div>Concession RDC 1 004,5 km / 1,258 Mds $ / 30 ans Mota-Engil (Ecofin Agency)</div>
+      <div>Intérêt DFC jusqu'à 1 Mds $ Mota-Engil (CGD)</div>
+      <div>Demande Banque mondiale 500 M$ (Financial Afrik)</div>
+      <div>UE / Global Gateway (Commission européenne) · BAD (afdb.org)</div>
+      <div>Accord USA-RDC 22/12/2025, objectifs 50 %/30 % (US State Dept · Discovery Alert — source unique)</div>
+      <div>Objectif d'investissement 6 Mds $ (Atlantic Council)</div>
+      <div>Gel aide USA (Bloomberg, 19/02/2025) · inondations avril 2026 (Mineria en Linea)</div>
+      <div>Gouvernance (NRGI) · cobalt artisanal (Wikipédia)</div>
+      <div>Gouverneure depuis le 13/07/2024, superficie, population (Wikipédia — Lualaba)</div>
+      <div>Aéroport FZQM, terminal 11/06/2025 (Wikipédia — Kolwezi Airport)</div>
+      <div>Route Kolwezi–Sakabinda : 159 M$, ~53,6 km, lancée en 2024 (Bankable.africa · Actualite.cd · Primature.gov.cd — date à trancher entre sources)</div>
+      <div>Chantiers provinciaux (ACP, juin 2025)</div>
+      <div>KBM 7ᵉ édition à Kolwezi 20–22 mai 2026 · Mining Indaba 2026 · EGC + Mercuria (Financial Afrik)</div>
+      <div>Courrier du Ministre N° CAB/MIN/TVCEIHT/LBA/0434/2026 du 28/08/2026 (document original)</div>
     </div>
   </div>
 </section>
@@ -498,25 +640,25 @@
 <section class="alt">
   <div class="container">
     <div class="eyebrow">Positionnement REM CORP</div>
-    <h2>Comment <span class="accent">répondre au courrier</span></h2>
+    <h2>Trois rôles, <span class="accent">zéro promesse</span></h2>
     <div class="grid-3" style="margin-top: 3rem;">
       <div class="position-card fade-in">
         <div class="role">Rôle 1</div>
         <div class="title">Accompagnateur administratif</div>
-        <div class="desc">Aider la province à répondre aux appels d'offres, structurer les dossiers, respecter les formats. La lettre a été renvoyée pour fautes d'orthographe et interlignes — c'est un problème que REM CORP peut résoudre.</div>
+        <div class="desc">Structurer les dossiers de la province aux formats attendus — par les bailleurs comme par l'administration. REM CORP accompagne, ne finance pas.</div>
       </div>
       <div class="position-card fade-in">
         <div class="role">Rôle 2</div>
-        <div class="title">Interface technique</div>
-        <div class="desc">Traduire les besoins de la province en langage de bailleurs (DFC, BAD, UE) et inversement. REM CORP a déjà structuré des projets avec la CNSS, docaposte, Odoo.</div>
+        <div class="title">Interface technique et financière</div>
+        <div class="desc">Traduire les besoins de la province en langage de bailleurs (DFC, BAD, Banque mondiale, UE) et inversement — identifier la source, préparer le dossier, introduire.</div>
       </div>
       <div class="position-card fade-in">
         <div class="role">Rôle 3</div>
         <div class="title">Agrégateur de projets</div>
-        <div class="desc">Identifier, prioriser et structurer les projets de la liste que le ministère va envoyer. REM CORP ne finance pas — accompagne la structuration.</div>
+        <div class="desc">Identifier, prioriser et structurer les projets prioritaires que le Gouvernement Provincial définira lors de la rencontre. Le mandat récurrent — le cœur du métier.</div>
       </div>
     </div>
-    <p class="lead" style="margin-top: 2rem;">REM CORP ne finance pas — accompagne la structuration. C'est exactement ce que la note du 08/09 demande : « accompagnement transition en hub industriel ».</p>
+    <p class="lead" style="margin-top: 2rem;">REM CORP ne finance pas — accompagne la structuration. Le courrier du 28/08/2026 annonce un examen approfondi de notre proposition et vise la mobilisation du secteur privé et des partenaires techniques et financiers pour des projets à fort impact économique et social.</p>
   </div>
 </section>
 
@@ -528,18 +670,18 @@
     <div class="grid-3" style="margin-top: 3rem;">
       <div class="position-card fade-in">
         <div class="role">Étape 1</div>
-        <div class="title">Rencontre avec le Ministère</div>
-        <div class="desc">Présenter les références (CNSS, docaposte, Odoo), le positionnement REM CORP, et demander la liste des projets avec financement.</div>
+        <div class="title">Transmettre le dossier demandé</div>
+        <div class="desc">Répondre à la lettre N° CAB/MIN/TVCEIHT/LBA/0434/2026 : présentation, domaines, références, attestations. Solliciter l'audience à Kolwezi.</div>
       </div>
       <div class="position-card fade-in">
         <div class="role">Étape 2</div>
-        <div class="title">Analyse des projets</div>
-        <div class="desc">Une fois la liste reçue, analyser chaque projet : besoin, chiffre, bailleur, positionnement REM CORP.</div>
+        <div class="title">Convenir des projets prioritaires</div>
+        <div class="desc">Lors de la rencontre : identifier les projets prioritaires (dont les 4 de la lettre du 18/08), les sources d'argent de chacun, l'ordre de passage.</div>
       </div>
       <div class="position-card fade-in">
         <div class="role">Étape 3</div>
-        <div class="title">Proposition ciblée</div>
-        <div class="desc">Proposer un accompagnement sur 2–3 projets précis, avec diagnostic, plan d'accompagnement, calendrier et demande d'audience.</div>
+        <div class="title">Structurer et capter</div>
+        <div class="desc">Par projet : diagnostic, montage, mise en relation bailleurs, suivi. Les montages de revenus se déclenchent par phase, puis au closing.</div>
       </div>
     </div>
     <p class="lead" style="margin-top: 2rem;">Le travail se fera lors de la rencontre avec les autorités du Lualaba, pas par courrier.</p>
